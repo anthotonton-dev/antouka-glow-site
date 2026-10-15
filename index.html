@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Antouka Glow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/game.css?v=aebd497">
+<style>body { margin: 0; } [hidden] { display: none !important; }</style>
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <h1 class="brand"><span class="dot">.</span>antouka<span class="tag">[ glow up edition ]</span></h1>
+    <div class="rules">
+      <span><b>1 .0</b>ramasse A N T O U K A</span>
+      <span><b>2 .0</b>mot complet = glow up</span>
+      <span><b>3 .0</b>touché par un bug = glow down</span>
+      <span><b>4 .0</b>bas = plateforme { } en l'air</span>
+      <span><b>5 .0</b>bats ruben puis carl</span>
+    </div>
+  </header>
+
+  <section class="stage" id="stage" aria-label="Jeu Antouka Glow">
+    <canvas id="game"></canvas>
+
+    <div class="hud">
+      <div class="quizoff" id="quizOff" hidden></div>
+      <div class="glow">
+        <span>glow</span>
+        <span class="num" id="glowNum">1 .0</span>
+        <span class="meter" id="meter"><i></i><i></i><i></i></span>
+        <span class="perk" id="perk">forme de base</span>
+        <span class="slow" id="slow" hidden>ralenti</span>
+        <span class="dev" id="dev" hidden>dev</span>
+        <span class="pads" id="pads" aria-label="Plateformes disponibles"></span>
+        <span class="power" id="power" aria-label="Pouvoir E"></span>
+      </div>
+      <div class="word" id="word" aria-label="Lettres collectées"></div>
+      <div class="score">
+        <span>score <strong id="score">000000</strong></span>
+        <span class="best">record <strong id="best">000000</strong></span>
+        <button class="ghost" id="pauseBtn" type="button">pause</button>
+        <button class="ghost" id="mute" type="button">son on</button>
+      </div>
+    </div>
+
+    <div class="bossbar" id="bossbar" hidden>
+      <span id="bossName">[ ruben ]</span>
+      <span class="hp" id="bossHp"><i></i><i></i><i></i></span>
+    </div>
+
+    <div class="splash" id="splash" aria-live="polite"></div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="mini-board" id="miniBoard" hidden aria-label="Top 5 du classement">
+      <span class="mb-title">[ top 5 chrono ]</span>
+      <ol id="miniRows"></ol>
+    </aside>
+
+    <div class="touch" id="touch">
+      <div class="pad">
+        <button type="button" id="tLeft" aria-label="Gauche">&larr;</button>
+        <button type="button" id="tRight" aria-label="Droite">&rarr;</button>
+      </div>
+      <div class="pad">
+        <button type="button" class="powb" id="tPower" aria-label="Pouvoir">E</button>
+        <button type="button" class="padb" id="tPad" aria-label="Poser une plateforme">{ }</button>
+        <button type="button" class="jump" id="tJump">saut</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span class="keys"><kbd>P</kbd> pause, <kbd>M</kbd> son, touches détaillées sur l'écran titre</span>
+    <span>DA inspirée de ecole-decode.fr</span>
+  </footer>
+</main>
+<script src="js/config.js?v=aebd497"></script>
+<script src="js/supa.js?v=aebd497"></script>
+<script src="js/player.js?v=aebd497"></script>
+<script src="js/quiz.js?v=aebd497"></script>
+<script src="js/leaderboard.js?v=aebd497"></script>
+<script src="js/game.js?v=aebd497"></script>
+</body>
+</html>

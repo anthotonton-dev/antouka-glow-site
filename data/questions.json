@@ -1,0 +1,3642 @@
+{
+ "version": 2,
+ "note": "Genere par scripts/build-questions.mjs depuis data/sources/*.json (cours Decode). Ne pas editer a la main.",
+ "themes": {
+  "api": {
+   "titre": "API et webhooks",
+   "formateur": "",
+   "n": 26
+  },
+  "archi": {
+   "titre": "Architectures no-code scalables et sécurisées",
+   "formateur": "Marc-André Gendre",
+   "n": 33
+  },
+  "crise": {
+   "titre": "Gestion et communication de crise",
+   "formateur": "Alexia Lefeuvre",
+   "n": 24
+  },
+  "git": {
+   "titre": "Git et CI/CD no-code",
+   "formateur": "Ruben",
+   "n": 18
+  },
+  "jeu": {
+   "titre": "Le jeu Antouka Glow",
+   "formateur": "",
+   "n": 12
+  },
+  "rgaa": {
+   "titre": "Accessibilité et inclusion, RGAA",
+   "formateur": "",
+   "n": 34
+  },
+  "rgpd": {
+   "titre": "RGPD",
+   "formateur": "Guillaume Lhuillier",
+   "n": 48
+  },
+  "sql": {
+   "titre": "Cloud et SQL avancés : Supabase",
+   "formateur": "Karl Marques Bernardo",
+   "n": 28
+  },
+  "vulgarisation": {
+   "titre": "Vulgarisation et actus du web",
+   "formateur": "Yoann Barrier",
+   "n": 35
+  }
+ },
+ "questions": [
+  {
+   "id": "api01",
+   "theme": "api",
+   "q": "Dans l'analogie du restaurant, qui joue le rôle de l'API ?",
+   "choices": [
+    "Le serveur",
+    "Le cuisinier",
+    "Le client",
+    "Le menu"
+   ],
+   "answer": 0,
+   "explain": "C'est au serveur qu'on pose une question, comme on s'adresse à l'API pour parler à un service tiers.",
+   "source": "api-02-01"
+  },
+  {
+   "id": "api02",
+   "theme": "api",
+   "q": "Quelle méthode HTTP sert à créer une donnée via une API ?",
+   "choices": [
+    "GET",
+    "POST",
+    "FETCH",
+    "READ"
+   ],
+   "answer": 1,
+   "explain": "Toutes les requêtes API sont HTTP : GET pour obtenir de l'information, POST pour créer.",
+   "source": "api-02-02"
+  },
+  {
+   "id": "api03",
+   "theme": "api",
+   "q": "Une erreur 404 appartient à quelle famille de codes ?",
+   "choices": [
+    "Les erreurs réseau",
+    "Les erreurs serveur",
+    "Les erreurs client",
+    "Les redirections"
+   ],
+   "answer": 2,
+   "explain": "Les codes 4xx sont côté client, les 5xx côté serveur ; la 404 est donc une erreur client.",
+   "source": "api-02-04"
+  },
+  {
+   "id": "api04",
+   "theme": "api",
+   "q": "Que prouve exactement un code de succès renvoyé par une API ?",
+   "choices": [
+    "Que la donnée est traitée",
+    "Que la donnée est stockée",
+    "Que le serveur est en bonne santé",
+    "Que la source a reçu l'information"
+   ],
+   "answer": 3,
+   "explain": "Un code de succès confirme la réception, pas que la donnée sera conservée ni traitée.",
+   "source": "api-02-05"
+  },
+  {
+   "id": "api05",
+   "theme": "api",
+   "q": "Quel format sert à envoyer toutes les informations nécessaires à une API ?",
+   "choices": [
+    "Le JSON",
+    "Le PDF",
+    "Le CSV",
+    "Le HTML"
+   ],
+   "answer": 0,
+   "explain": "Le JSON permet d'envoyer les informations et de les traiter de l'autre côté.",
+   "source": "api-02-06"
+  },
+  {
+   "id": "api06",
+   "theme": "api",
+   "q": "Dans un JSON, comment reconnaît-on deux champs du même niveau d'imbrication ?",
+   "choices": [
+    "Ils ont le même type de valeur",
+    "Ils sont alignés au même retrait",
+    "Ils sont sur la même ligne",
+    "Ils commencent par la même lettre"
+   ],
+   "answer": 1,
+   "explain": "Tout ce qui est aligné au même retrait est au même niveau d'imbrication.",
+   "source": "api-02-07"
+  },
+  {
+   "id": "api07",
+   "theme": "api",
+   "q": "Dans l'exemple du cours, quel est le chemin vers le prénom de l'acheteur ?",
+   "choices": [
+    "billet, prix, prénom",
+    "acheteur, billet, prénom",
+    "billet, acheteur, prénom",
+    "prénom, acheteur, billet"
+   ],
+   "answer": 2,
+   "explain": "On descend billet puis acheteur puis prénom ; le prix, au même niveau qu'acheteur, n'entre pas.",
+   "source": "api-02-08"
+  },
+  {
+   "id": "api08",
+   "theme": "api",
+   "q": "Qu'est-ce qu'un webhook, concrètement ?",
+   "choices": [
+    "Un script qui interroge une API",
+    "Un format de fichier",
+    "Une clé d'accès à un service",
+    "Une adresse chez vous où un service envoie"
+   ],
+   "answer": 3,
+   "explain": "C'est un endpoint chez vous sur lequel un service tiers envoie une requête HTTP quand un événement survient.",
+   "source": "api-02-10"
+  },
+  {
+   "id": "api09",
+   "theme": "api",
+   "q": "Quelle différence de sens entre une API et un webhook ?",
+   "choices": [
+    "API : vous demandez, webhook : on vous alerte",
+    "API : on vous alerte, webhook : vous demandez",
+    "Les deux envoient sans demande",
+    "Les deux exigent une requête de votre part"
+   ],
+   "answer": 0,
+   "explain": "Avec une API vous interrogez quand vous en avez besoin ; avec un webhook le service vous prévient.",
+   "source": "api-02-11"
+  },
+  {
+   "id": "api10",
+   "theme": "api",
+   "q": "Comment appelle-t-on l'événement qui provoque l'envoi d'un webhook ?",
+   "choices": [
+    "Le payload",
+    "Le trigger",
+    "Le header",
+    "L'endpoint"
+   ],
+   "answer": 1,
+   "explain": "Le trigger, ou déclencheur, est l'événement qui mord à l'hameçon et envoie le message.",
+   "source": "api-02-12"
+  },
+  {
+   "id": "api11",
+   "theme": "api",
+   "q": "Dans l'analogie du biper, que représente le biper ?",
+   "choices": [
+    "Une requête API répétée",
+    "Un code d'erreur serveur",
+    "Un webhook",
+    "Un fichier JSON"
+   ],
+   "answer": 2,
+   "explain": "Au lieu de demander toutes les deux minutes au comptoir, le biper sonne quand la commande est prête.",
+   "source": "api-02-14"
+  },
+  {
+   "id": "api12",
+   "theme": "api",
+   "q": "Quand faut-il fournir l'adresse de réception d'un webhook ?",
+   "choices": [
+    "Après le premier événement",
+    "Au moment de l'événement",
+    "Jamais, elle est générée automatiquement",
+    "Avant que l'événement se produise"
+   ],
+   "answer": 3,
+   "explain": "L'adresse de réception doit être fournie et paramétrée avant l'événement.",
+   "source": "api-02-15"
+  },
+  {
+   "id": "api13",
+   "theme": "api",
+   "q": "Quel est le défaut d'interroger une API à intervalles réguliers ?",
+   "choices": [
+    "Des vérifications inutiles qui coûtent",
+    "Le serveur refuse après 10 appels",
+    "Les données arrivent corrompues",
+    "Les codes d'erreur sont désactivés"
+   ],
+   "answer": 0,
+   "explain": "Tant que l'événement n'a pas eu lieu, chaque vérification est inutile et consomme de la ressource.",
+   "source": "api-02-16"
+  },
+  {
+   "id": "api14",
+   "theme": "api",
+   "q": "Combien de fois un webhook est-il envoyé pour un événement ?",
+   "choices": [
+    "Toutes les minutes",
+    "Une seule fois, quand l'événement arrive",
+    "Deux fois, pour sécurité",
+    "Autant de fois qu'on l'interroge"
+   ],
+   "answer": 1,
+   "explain": "Un webhook n'est envoyé qu'une seule fois, au moment où l'événement arrive.",
+   "source": "api-02-17"
+  },
+  {
+   "id": "api15",
+   "theme": "api",
+   "q": "Sur Make, à quoi correspond un crédit ?",
+   "choices": [
+    "Un scénario complet",
+    "Une minute d'exécution",
+    "Un bloc",
+    "Un utilisateur connecté"
+   ],
+   "answer": 2,
+   "explain": "Un crédit correspond à un bloc, et le forfait gratuit en donne un nombre limité par mois.",
+   "source": "api-02-18"
+  },
+  {
+   "id": "api16",
+   "theme": "api",
+   "q": "Requêter une API une fois par minute représente combien de vérifications par jour ?",
+   "choices": [
+    "60",
+    "600",
+    "1000",
+    "1440"
+   ],
+   "answer": 3,
+   "explain": "60 minutes fois 24 heures donnent 1440 vérifications, sans compter la taille du scénario.",
+   "source": "api-02-19"
+  },
+  {
+   "id": "api17",
+   "theme": "api",
+   "q": "Que faire si un service ne propose pas d'intégration webhook ?",
+   "choices": [
+    "Requêter l'API avec un délai abordable",
+    "Changer de service",
+    "Demander un webhook au support",
+    "Envoyer soi-même un webhook au service"
+   ],
+   "answer": 0,
+   "explain": "Il faut alors requêter l'API et choisir un délai abordable en ressources et en coût.",
+   "source": "api-02-20"
+  },
+  {
+   "id": "api18",
+   "theme": "api",
+   "q": "Quelle question se poser pour choisir entre API et webhook ?",
+   "choices": [
+    "Quel est le prix de l'abonnement ?",
+    "Quelle urgence pour traiter l'info ?",
+    "Quelle taille fait le JSON ?",
+    "Quel langage utilise le service ?"
+   ],
+   "answer": 1,
+   "explain": "Si une vérification par jour suffit, pas besoin de webhook : tout dépend de l'urgence.",
+   "source": "api-02-21"
+  },
+  {
+   "id": "api19",
+   "theme": "api",
+   "q": "Quels sont les quatre éléments qui définissent un webhook ?",
+   "choices": [
+    "Clé, token, URL, délai",
+    "Événement, API, mot de passe, JSON",
+    "Événement, URL, payload, en-têtes",
+    "URL, GET, POST, code 200"
+   ],
+   "answer": 2,
+   "explain": "Un webhook se définit par l'événement déclencheur, l'URL de réception, le payload et les en-têtes.",
+   "source": "api-02-23"
+  },
+  {
+   "id": "api20",
+   "theme": "api",
+   "q": "Dans un webhook, qu'est-ce que le payload ?",
+   "choices": [
+    "L'adresse de destination",
+    "Le code de réponse",
+    "Les informations sur l'envoi",
+    "Le corps du JSON"
+   ],
+   "answer": 3,
+   "explain": "Le payload est le corps du JSON ; les en-têtes portent les informations sur l'envoi.",
+   "source": "api-02-24"
+  },
+  {
+   "id": "api21",
+   "theme": "api",
+   "q": "Quel risque pose un endpoint de webhook non sécurisé ?",
+   "choices": [
+    "N'importe qui peut envoyer un faux JSON",
+    "Le service tiers cesse d'envoyer",
+    "Les données arrivent en double",
+    "Le JSON est tronqué"
+   ],
+   "answer": 0,
+   "explain": "Quiconque connaît l'adresse peut envoyer un faux JSON et activer vos webhooks.",
+   "source": "api-02-25"
+  },
+  {
+   "id": "api22",
+   "theme": "api",
+   "q": "Exemple d'attaque du cours : que peut faire quelqu'un qui connaît votre endpoint Stripe ?",
+   "choices": [
+    "Lire vos paiements passés",
+    "Faire croire à un abonnement payé",
+    "Bloquer vos clients",
+    "Changer vos tarifs"
+   ],
+   "answer": 1,
+   "explain": "Un faux JSON disant que Stripe a validé un abonnement peut activer un accès jamais payé.",
+   "source": "api-02-27"
+  },
+  {
+   "id": "api23",
+   "theme": "api",
+   "q": "Que fait le service tiers à chaque événement une fois le webhook configuré ?",
+   "choices": [
+    "Il envoie un email de notification",
+    "Il attend que vous interrogiez l'API",
+    "Il envoie un POST et attend un accusé",
+    "Il met à jour sa base et rien d'autre"
+   ],
+   "answer": 2,
+   "explain": "Le service envoie une requête POST vers l'URL configurée puis attend un accusé de réception.",
+   "source": "api-02-28"
+  },
+  {
+   "id": "api24",
+   "theme": "api",
+   "q": "Dans Make, quel bloc suit le bloc webhook pour accuser réception ?",
+   "choices": [
+    "Un bloc filtre",
+    "Un bloc routeur",
+    "Un bloc HTTP GET",
+    "Un bloc réponse qui renvoie un 2xx"
+   ],
+   "answer": 3,
+   "explain": "Le code 2xx renvoyé signifie que l'information a bien été reçue ; c'est le bloc réponse qui l'envoie.",
+   "source": "api-02-29"
+  },
+  {
+   "id": "api25",
+   "theme": "api",
+   "q": "Que fait le service tiers s'il ne reçoit pas d'accusé de réception ?",
+   "choices": [
+    "Il réessaie à intervalles réguliers",
+    "Il supprime l'événement",
+    "Il désactive le webhook",
+    "Il bascule sur l'API"
+   ],
+   "answer": 0,
+   "explain": "Sans accusé de réception, le service réessaie d'envoyer l'information à intervalles réguliers.",
+   "source": "api-02-30"
+  },
+  {
+   "id": "api26",
+   "theme": "api",
+   "q": "Quel problème peut causer la réception en double d'une confirmation de commande ?",
+   "choices": [
+    "Un code 404 renvoyé au client",
+    "La création de deux commandes",
+    "La perte de la première commande",
+    "Un blocage du webhook"
+   ],
+   "answer": 1,
+   "explain": "Le système peut créer deux commandes ou deux abonnements alors qu'il n'y en a qu'un.",
+   "source": "api-02-31"
+  },
+  {
+   "id": "archi01",
+   "theme": "archi",
+   "q": "Quel est le fil rouge du cours d'architecture no-code ?",
+   "choices": [
+    "Une stack Airtable et n8n héritée qui bugge",
+    "Un site Shopify à refondre",
+    "Une app mobile à concevoir",
+    "Un data lake à construire"
+   ],
+   "answer": 0,
+   "explain": "La stack héritée marche en démo mais accumule les bugs dès sa mise en ligne.",
+   "source": "archi-01-01"
+  },
+  {
+   "id": "archi02",
+   "theme": "archi",
+   "q": "Quelle est la démarche du cours face à l'architecture héritée ?",
+   "choices": [
+    "Tout reconstruire de zéro",
+    "Identifier les bugs, puis améliorer",
+    "Migrer vers du code",
+    "Ajouter des tests seulement"
+   ],
+   "answer": 1,
+   "explain": "D'abord comprendre pourquoi l'archi a lâché, ensuite l'améliorer pour la prod.",
+   "source": "archi-01-02"
+  },
+  {
+   "id": "archi03",
+   "theme": "archi",
+   "q": "Que signifie SOT en architecture de données ?",
+   "choices": [
+    "System of Tables",
+    "Schema of Transactions",
+    "Source of truth",
+    "Service over Time"
+   ],
+   "answer": 2,
+   "explain": "Une application doit avoir une seule source de vérité pour sa donnée.",
+   "source": "archi-01-05"
+  },
+  {
+   "id": "archi04",
+   "theme": "archi",
+   "q": "Qu'est-ce qu'un data lake ?",
+   "choices": [
+    "Une base SQL unique et propre",
+    "Un cache de l'API",
+    "Un tableau de bord analytique",
+    "Données de partout, formats disparates"
+   ],
+   "answer": 3,
+   "explain": "Il faut d'abord traiter cette donnée, puis désigner la source qui fait foi.",
+   "source": "archi-01-06"
+  },
+  {
+   "id": "archi05",
+   "theme": "archi",
+   "q": "Quel est le rôle d'un agrégateur de data ?",
+   "choices": [
+    "Récupérer, trier et nettoyer la donnée",
+    "Sauvegarder les bases chaque nuit",
+    "Afficher des graphiques",
+    "Chiffrer les données sensibles"
+   ],
+   "answer": 0,
+   "explain": "Il agrège et met la donnée au propre, et c'est cette source agrégée qui fait foi.",
+   "source": "archi-01-07"
+  },
+  {
+   "id": "archi06",
+   "theme": "archi",
+   "q": "Dans l'exemple Shopify, quand la donnée d'une commande est-elle garantie bonne ?",
+   "choices": [
+    "Après export dans Airtable",
+    "Tant qu'on reste dans l'objet order",
+    "Une fois envoyée par webhook",
+    "Après traitement dans n8n"
+   ],
+   "answer": 1,
+   "explain": "Dès qu'on sort la donnée de l'objet prévu par Shopify, on ne la garantit plus à 100 pour cent.",
+   "source": "archi-01-08"
+  },
+  {
+   "id": "archi07",
+   "theme": "archi",
+   "q": "Qu'est-ce que le polling ?",
+   "choices": [
+    "L'autre système te prévient à chaque action",
+    "Un planning de déclenchement",
+    "Ton système demande régulièrement du nouveau",
+    "Un traitement par lots nocturne"
+   ],
+   "answer": 2,
+   "explain": "Exemple : interroger un drive tous les X temps pour voir les fichiers ajoutés ou modifiés.",
+   "source": "archi-01-09"
+  },
+  {
+   "id": "archi08",
+   "theme": "archi",
+   "q": "Comment fonctionne un webhook ?",
+   "choices": [
+    "Ton système interroge l'autre à intervalle",
+    "Un script tourne chaque nuit",
+    "Un humain valide chaque étape",
+    "L'autre système t'appelle à chaque action"
+   ],
+   "answer": 3,
+   "explain": "Un client commande, le webhook part et on enchaîne les étapes suivantes, comme un email.",
+   "source": "archi-01-10"
+  },
+  {
+   "id": "archi09",
+   "theme": "archi",
+   "q": "Quel est le cas typique d'utilisation de n8n ou d'un outil d'automation ?",
+   "choices": [
+    "Réagir à un événement externe via webhook",
+    "Héberger une base de données",
+    "Remplacer le CRM",
+    "Compiler du code"
+   ],
+   "answer": 0,
+   "explain": "Réagir à un événement externe par webhook, c'est le cas d'usage type de l'automation.",
+   "source": "archi-01-11"
+  },
+  {
+   "id": "archi10",
+   "theme": "archi",
+   "q": "Quelle est la différence entre une tâche cron et le polling ?",
+   "choices": [
+    "Le cron est le quoi, le polling le quand",
+    "Le cron est le quand, le polling le quoi",
+    "Ce sont deux noms pour la même chose",
+    "Le cron remplace le webhook"
+   ],
+   "answer": 1,
+   "explain": "Le cron fixe la fréquence, le polling va chercher ce qui a changé pendant ce laps de temps.",
+   "source": "archi-01-12"
+  },
+  {
+   "id": "archi11",
+   "theme": "archi",
+   "q": "Complète la phrase du cours : le cron donne le rythme, le polling...",
+   "choices": [
+    "c'est le filet de secours",
+    "c'est la mise à jour en lot",
+    "c'est aller chercher l'info à chaque tick",
+    "c'est la source de vérité"
+   ],
+   "answer": 2,
+   "explain": "Le cron cadence, le polling fait le travail de récupération à chaque déclenchement.",
+   "source": "archi-01-13"
+  },
+  {
+   "id": "archi12",
+   "theme": "archi",
+   "q": "Que désigne un tick dans un système cron ou polling ?",
+   "choices": [
+    "Une erreur d'API",
+    "Un nœud n8n",
+    "Un fichier modifié",
+    "Chaque déclenchement de l'action"
+   ],
+   "answer": 3,
+   "explain": "Un tick, c'est chaque déclenchement de l'action programmée.",
+   "source": "archi-01-14"
+  },
+  {
+   "id": "archi13",
+   "theme": "archi",
+   "q": "Dans quel cas utilise-t-on cron ou polling plutôt qu'un webhook ?",
+   "choices": [
+    "Quand l'outil n'offre ni webhook ni API",
+    "Quand il faut réagir en temps réel",
+    "Quand les quotas d'API sont limités",
+    "Quand la donnée est dans Shopify"
+   ],
+   "answer": 0,
+   "explain": "Cas fréquent des anciens systèmes ou des données sensibles : la donnée obtenue est alors dérivée.",
+   "source": "archi-01-15"
+  },
+  {
+   "id": "archi14",
+   "theme": "archi",
+   "q": "Quel rôle secondaire peut jouer une tâche cron quotidienne ?",
+   "choices": [
+    "Remplacer les webhooks",
+    "Filet de secours pour rattraper et vérifier",
+    "Nettoyer la base de données",
+    "Générer les factures"
+   ],
+   "answer": 1,
+   "explain": "Un cron de rattrapage récupère infos et logs pour vérifier que tout est bien passé.",
+   "source": "archi-01-16"
+  },
+  {
+   "id": "archi15",
+   "theme": "archi",
+   "q": "Comment appelle-t-on le traitement par lots, par exemple pour un gros catalogue produits ?",
+   "choices": [
+    "Un webhook",
+    "Un tick",
+    "Un batch",
+    "Un subflow"
+   ],
+   "answer": 2,
+   "explain": "Un cron avec un polling à l'intérieur ne met à jour que les données qui ont changé.",
+   "source": "archi-01-17"
+  },
+  {
+   "id": "archi16",
+   "theme": "archi",
+   "q": "Pour quel type d'action privilégie-t-on un webhook ?",
+   "choices": [
+    "Mise à jour d'un catalogue de 50 000 refs",
+    "Rapport hebdomadaire",
+    "Archivage mensuel des logs",
+    "Commande, paiement ou validation"
+   ],
+   "answer": 3,
+   "explain": "On utilise un webhook quand il faut réagir vite à un événement.",
+   "source": "archi-01-18"
+  },
+  {
+   "id": "archi17",
+   "theme": "archi",
+   "q": "Pourquoi préférer le webhook au polling quand les quotas d'API sont limités ?",
+   "choices": [
+    "Pour éviter de taper dans les plafonds",
+    "Parce que le webhook est plus simple",
+    "Parce que le polling coûte des tokens",
+    "Parce que le webhook est gratuit"
+   ],
+   "answer": 0,
+   "explain": "Le polling interroge sans cesse l'API, le webhook n'appelle qu'à chaque vrai événement.",
+   "source": "archi-01-19"
+  },
+  {
+   "id": "archi18",
+   "theme": "archi",
+   "q": "Peut-on mélanger polling et webhook dans un même flux ?",
+   "choices": [
+    "Oui, c'est recommandé pour la robustesse",
+    "Non, c'est soit l'un soit l'autre",
+    "Oui, si le cron est désactivé",
+    "Oui, uniquement en batch"
+   ],
+   "answer": 1,
+   "explain": "Dans un même flux, on choisit un mode de déclenchement, pas les deux.",
+   "source": "archi-01-20"
+  },
+  {
+   "id": "archi19",
+   "theme": "archi",
+   "q": "Que se passe-t-il quand un flux n8n devient plus complexe ?",
+   "choices": [
+    "Il s'exécute plus vite",
+    "Il consomme moins de quotas",
+    "Il demande plus de nœuds et se maintient mal",
+    "Il devient plus sécurisé"
+   ],
+   "answer": 2,
+   "explain": "Plus de nœuds, plus de complexité, donc plus de difficulté à maintenir.",
+   "source": "archi-01-21"
+  },
+  {
+   "id": "archi20",
+   "theme": "archi",
+   "q": "Pourquoi découper ses workflows au fur et à mesure ?",
+   "choices": [
+    "Pour économiser des exécutions",
+    "Pour impressionner le client",
+    "Pour éviter d'utiliser des webhooks",
+    "Pour trouver l'erreur rapidement"
+   ],
+   "answer": 3,
+   "explain": "Des scénarios vont forcément bugger, le découpage localise vite la panne.",
+   "source": "archi-01-22"
+  },
+  {
+   "id": "archi21",
+   "theme": "archi",
+   "q": "Pourquoi ne pas mettre toute l'application dans un seul workflow ?",
+   "choices": [
+    "C'est une source d'erreurs",
+    "n8n limite le nombre de nœuds",
+    "Le webhook ne le permet pas",
+    "Les quotas d'API l'interdisent"
+   ],
+   "answer": 0,
+   "explain": "On ne peut pas résumer toute une application dans un seul flux sans multiplier les erreurs.",
+   "source": "archi-01-23"
+  },
+  {
+   "id": "archi22",
+   "theme": "archi",
+   "q": "À quoi sert le découpage des workflows, au-delà du débogage ?",
+   "choices": [
+    "Réduire la facture n8n",
+    "Séparer les responsabilités des briques",
+    "Accélérer les webhooks",
+    "Supprimer le polling"
+   ],
+   "answer": 1,
+   "explain": "Chaque brique a sa responsabilité et on définit ce qu'elle attend des autres.",
+   "source": "archi-01-24"
+  },
+  {
+   "id": "archi23",
+   "theme": "archi",
+   "q": "Quel problème de droits règle le fait d'avoir plusieurs scénarios plutôt qu'un seul ?",
+   "choices": [
+    "Le partage des clés API",
+    "L'accès admin à n8n",
+    "Un flux RH sensible n'est pas ouvert à tous",
+    "La licence multi-utilisateurs"
+   ],
+   "answer": 2,
+   "explain": "Un flux qui va chercher des infos RH sensibles ne doit pas être accessible à tout le monde.",
+   "source": "archi-01-25"
+  },
+  {
+   "id": "archi24",
+   "theme": "archi",
+   "q": "Sur n8n, comment découpe-t-on un gros flow ?",
+   "choices": [
+    "En modules",
+    "En scénarios Make",
+    "En branches Git",
+    "En subflows"
+   ],
+   "answer": 3,
+   "explain": "Le découpage d'un gros flow n8n se fait en subflows.",
+   "source": "archi-01-26"
+  },
+  {
+   "id": "archi25",
+   "theme": "archi",
+   "q": "Que signifie PII ?",
+   "choices": [
+    "Personally Identifiable Information",
+    "Private Internet Interface",
+    "Public Information Index",
+    "Protected Internal Identity"
+   ],
+   "answer": 0,
+   "explain": "Les informations personnelles relèvent du RGPD et de normes PII aux contrôles qui se durcissent.",
+   "source": "archi-01-27"
+  },
+  {
+   "id": "archi26",
+   "theme": "archi",
+   "q": "Quel est le cas d'étude de la grille d'audit ?",
+   "choices": [
+    "Une boutique Shopify en Black Friday",
+    "Une PME de 120 personnes, demandes internes",
+    "Une start-up SaaS en levée de fonds",
+    "Une mairie et ses formulaires"
+   ],
+   "answer": 1,
+   "explain": "Congés, matériel, accès : formulaire, n8n et Airtable marchent en démo et cassent à la rentrée.",
+   "source": "archi-01-28"
+  },
+  {
+   "id": "archi27",
+   "theme": "archi",
+   "q": "Comment se remplit la grille d'audit dans un premier temps ?",
+   "choices": [
+    "Avec ChatGPT",
+    "Avec un agent BMAD",
+    "Sans LLM",
+    "Avec Playwright"
+   ],
+   "answer": 2,
+   "explain": "Ses 8 questions sont celles auxquelles il faudra savoir répondre au partiel.",
+   "source": "archi-01-29"
+  },
+  {
+   "id": "archi28",
+   "theme": "archi",
+   "q": "Quel agent BMAD l'installeur signale-t-il comme à risque élevé ?",
+   "choices": [
+    "Le product manager",
+    "L'architecte",
+    "Le dev",
+    "Le reviewer"
+   ],
+   "answer": 3,
+   "explain": "Le reviewer est à risque élevé parce qu'il a accès à tout.",
+   "source": "archi-01-36"
+  },
+  {
+   "id": "archi29",
+   "theme": "archi",
+   "q": "Comment s'emboîtent les éléments d'un PRD dans la méthode BMAD ?",
+   "choices": [
+    "Epics, user stories, cas de test",
+    "Sprints, tickets, commits",
+    "Modules, fonctions, tests",
+    "Objectifs, KPI, tâches"
+   ],
+   "answer": 0,
+   "explain": "Chaque epic contient des user stories, chaque story des cas de test, tout créé en amont.",
+   "source": "archi-01-41"
+  },
+  {
+   "id": "archi30",
+   "theme": "archi",
+   "q": "Qu'apporte le party mode de BMAD par rapport à un LLM classique ?",
+   "choices": [
+    "Il code plus vite",
+    "Il challenge et dit quand c'est mauvais",
+    "Il choisit le modèle le moins cher",
+    "Il déploie automatiquement"
+   ],
+   "answer": 1,
+   "explain": "Il pose les questions auxquelles on n'a pas pensé, là où les LLM disent oui à tout.",
+   "source": "archi-01-42"
+  },
+  {
+   "id": "archi31",
+   "theme": "archi",
+   "q": "Pourquoi le cadrage BMAD supprime-t-il les hallucinations ?",
+   "choices": [
+    "Il utilise un modèle plus gros",
+    "Il désactive la créativité",
+    "Tout ce qui est dit est écrit dans des .md",
+    "Il limite le nombre de prompts"
+   ],
+   "answer": 2,
+   "explain": "Le dialogue prend du temps, mais tout est consigné dans les fichiers .md.",
+   "source": "archi-03-06"
+  },
+  {
+   "id": "archi32",
+   "theme": "archi",
+   "q": "Quel rôle jouent les fichiers .md dans un projet BMAD ?",
+   "choices": [
+    "Documentation pour le client",
+    "Sauvegarde du code",
+    "Journal des erreurs",
+    "Mémoire persistante de l'IA"
+   ],
+   "answer": 3,
+   "explain": "Même après des mois de prompting, l'IA se rappelle ce qui a été dit au début.",
+   "source": "archi-03-07"
+  },
+  {
+   "id": "archi33",
+   "theme": "archi",
+   "q": "Quelle exigence s'applique à chaque feature du projet ?",
+   "choices": [
+    "Être testable et vérifiable",
+    "Être livrée en une journée",
+    "Être codée sans IA",
+    "Être validée par le formateur"
+   ],
+   "answer": 0,
+   "explain": "Tests unitaires ou end to end, définis à l'intérieur même des features.",
+   "source": "archi-03-10"
+  },
+  {
+   "id": "crise01",
+   "theme": "crise",
+   "q": "Quelles sont les trois caractéristiques d'une crise vues en cours ?",
+   "choices": [
+    "Enjeux, accélération du temps, incertitude",
+    "Médias, réseaux sociaux, rumeurs",
+    "Budget, délais, qualité",
+    "Peur, colère, déni"
+   ],
+   "answer": 0,
+   "explain": "Une crise se définit par l'importance des enjeux, le temps qui s'accélère et l'incertitude.",
+   "source": "crise-01-01"
+  },
+  {
+   "id": "crise02",
+   "theme": "crise",
+   "q": "Pourquoi l'importance des enjeux fait-elle monter la pression en crise ?",
+   "choices": [
+    "Parce que les médias amplifient tout",
+    "Chacun pense que son cas prime sur l'autre",
+    "Parce que l'argent est en jeu",
+    "Parce que les délais sont trop courts"
+   ],
+   "answer": 1,
+   "explain": "Chacun juge son cas plus important que celui de l'autre, et c'est cela qui fait monter la pression.",
+   "source": "crise-01-02"
+  },
+  {
+   "id": "crise03",
+   "theme": "crise",
+   "q": "Quel exemple d'enjeu maximal est donné en cours, face à une simple place de parking ?",
+   "choices": [
+    "Une fuite de données clients",
+    "Un rappel de voitures défectueuses",
+    "Un enfant étouffé par un bouchon de lait",
+    "Un incendie dans un entrepôt"
+   ],
+   "answer": 2,
+   "explain": "L'enfant qui s'étouffe est une mort potentielle, la place de parking un enjeu dérisoire.",
+   "source": "crise-01-03"
+  },
+  {
+   "id": "crise04",
+   "theme": "crise",
+   "q": "Comment se manifeste l'accélération du temps pendant une crise ?",
+   "choices": [
+    "Les décisions se prennent plus lentement",
+    "On compte chaque minute",
+    "Les journées paraissent interminables",
+    "On passe de 9h à 18h sans s'en rendre compte"
+   ],
+   "answer": 3,
+   "explain": "En crise, il est 9 heures puis 18 heures sans qu'on ait vu le temps passer.",
+   "source": "crise-01-04"
+  },
+  {
+   "id": "crise05",
+   "theme": "crise",
+   "q": "Pourquoi le temps semble-t-il s'accélérer en crise ?",
+   "choices": [
+    "On est en hyperstimulation permanente",
+    "On dort moins",
+    "On travaille en équipe réduite",
+    "Les médias imposent leur rythme"
+   ],
+   "answer": 0,
+   "explain": "L'hyperstimulation permanente fait perdre la notion du temps.",
+   "source": "crise-01-05"
+  },
+  {
+   "id": "crise06",
+   "theme": "crise",
+   "q": "Quelle caractéristique de la crise est présentée comme la plus importante ?",
+   "choices": [
+    "L'importance des enjeux",
+    "L'incertitude",
+    "L'accélération du temps",
+    "La pression médiatique"
+   ],
+   "answer": 1,
+   "explain": "L'incertitude domine : quand on tente quelque chose, on peut potentiellement faire pire.",
+   "source": "crise-01-06"
+  },
+  {
+   "id": "crise07",
+   "theme": "crise",
+   "q": "Dans l'image de l'incendie, qu'illustre la flamme partie embraser autre chose à 3 km ?",
+   "choices": [
+    "La lenteur des secours",
+    "Le manque de moyens",
+    "Une crise inattendue née de l'incertitude",
+    "L'importance de la communication"
+   ],
+   "answer": 2,
+   "explain": "On éteint le feu quadrillé, mais une flamme latérale crée une crise qu'on n'attendait pas.",
+   "source": "crise-01-07"
+  },
+  {
+   "id": "crise08",
+   "theme": "crise",
+   "q": "Quelle attitude adopter face à l'incertitude d'une crise ?",
+   "choices": [
+    "La supprimer par une bonne préparation",
+    "La cacher aux équipes",
+    "La compenser par plus de réunions",
+    "L'accepter, on peut échouer malgré tout"
+   ],
+   "answer": 3,
+   "explain": "On peut louper une crise où tout a été bien fait : l'incertitude s'accepte.",
+   "source": "crise-01-08"
+  },
+  {
+   "id": "crise09",
+   "theme": "crise",
+   "q": "Face à dix compliments et une remarque, sur quoi le cerveau se concentre-t-il ?",
+   "choices": [
+    "Sur la remarque",
+    "Sur les compliments",
+    "Sur l'ensemble de façon équilibrée",
+    "Sur la personne qui parle"
+   ],
+   "answer": 0,
+   "explain": "C'est le biais de négativité : le cerveau retient ce qui ne va pas, un résultat prouvé en neurosciences.",
+   "source": "crise-01-09"
+  },
+  {
+   "id": "crise10",
+   "theme": "crise",
+   "q": "Que se passe-t-il si on glisse la remarque au milieu des compliments ?",
+   "choices": [
+    "Elle passe inaperçue",
+    "Rien ne change, le cerveau la retient",
+    "Elle est perçue comme un compliment",
+    "Elle est oubliée plus vite"
+   ],
+   "answer": 1,
+   "explain": "Peu importe sa place, le cerveau se concentre quand même sur ce qui ne va pas.",
+   "source": "crise-01-10"
+  },
+  {
+   "id": "crise11",
+   "theme": "crise",
+   "q": "Quel média est cité en cours comme exemple d'exploitation du biais de négativité ?",
+   "choices": [
+    "Le Monde",
+    "France Inter",
+    "BFMTV",
+    "Arte"
+   ],
+   "answer": 2,
+   "explain": "Les chaînes d'info en continu comme BFMTV se nourrissent du biais de négativité.",
+   "source": "crise-01-11"
+  },
+  {
+   "id": "crise12",
+   "theme": "crise",
+   "q": "Que se passe-t-il quand on répond « ça va » à la question « comment ça va ? » ?",
+   "choices": [
+    "L'interlocuteur demande pourquoi",
+    "La discussion devient plus profonde",
+    "L'interlocuteur s'inquiète",
+    "La conversation s'arrête là"
+   ],
+   "answer": 3,
+   "explain": "Répondre que ça ne va pas suscite l'intérêt et la question pourquoi, alors que « ça va » clôt l'échange.",
+   "source": "crise-01-12"
+  },
+  {
+   "id": "crise13",
+   "theme": "crise",
+   "q": "Comment le cours résume-t-il le biais de négativité en une phrase ?",
+   "choices": [
+    "Aller bien c'est la base, le drama intéresse",
+    "Le négatif se corrige, le positif se garde",
+    "Une critique vaut dix compliments",
+    "Le silence est une réponse"
+   ],
+   "answer": 0,
+   "explain": "Aller bien c'est la base, ne pas aller bien c'est intéressant : le drama attire.",
+   "source": "crise-01-13"
+  },
+  {
+   "id": "crise14",
+   "theme": "crise",
+   "q": "Quelle question est conseillée pour rendre tangible le positif chez quelqu'un ?",
+   "choices": [
+    "Qu'est-ce qui ne va pas ?",
+    "Pourquoi ça va ?",
+    "Qu'est-ce que tu ferais autrement ?",
+    "Tu es sûr que ça va ?"
+   ],
+   "answer": 1,
+   "explain": "Demander pourquoi ça va permet de s'intéresser aux gens et de comprendre ce qui les fait vibrer.",
+   "source": "crise-01-14"
+  },
+  {
+   "id": "crise15",
+   "theme": "crise",
+   "q": "Qu'explique le biais de négativité à propos des trolls et de la crise permanente ?",
+   "choices": [
+    "Les trolls cherchent la vérité",
+    "La crise finit toujours par s'épuiser",
+    "On se nourrit de la crise pour exister",
+    "Les trolls sont minoritaires"
+   ],
+   "answer": 2,
+   "explain": "On existe parce qu'il y a de la crise : le biais de négativité alimente trolls et crise permanente.",
+   "source": "crise-01-15"
+  },
+  {
+   "id": "crise16",
+   "theme": "crise",
+   "q": "Quel trait ont souvent les personnes spécialisées en communication de crise ?",
+   "choices": [
+    "Un côté perfectionniste",
+    "Un côté anxieux",
+    "Un côté manipulateur",
+    "Un côté sauveur"
+   ],
+   "answer": 3,
+   "explain": "Gérer une crise donne le sentiment d'être utile, d'où ce côté sauveur fréquent.",
+   "source": "crise-01-16"
+  },
+  {
+   "id": "crise17",
+   "theme": "crise",
+   "q": "De qui dépend surtout l'effet d'une remarque faite après des compliments ?",
+   "choices": [
+    "Du récepteur et de sa susceptibilité",
+    "De l'émetteur et de son ton",
+    "Du contexte professionnel",
+    "Du nombre de compliments"
+   ],
+   "answer": 0,
+   "explain": "L'effet varie selon la susceptibilité de celui qui reçoit, pas selon celui qui émet.",
+   "source": "crise-01-17"
+  },
+  {
+   "id": "crise18",
+   "theme": "crise",
+   "q": "En quoi consiste la technique du sandwich pour formuler une critique ?",
+   "choices": [
+    "Deux critiques autour d'un compliment",
+    "Compliment, critique, puis compliment",
+    "Critique suivie d'une solution",
+    "Compliment puis critique en privé"
+   ],
+   "answer": 1,
+   "explain": "Encadrer la critique entre deux compliments permet de l'atténuer.",
+   "source": "crise-01-18"
+  },
+  {
+   "id": "crise19",
+   "theme": "crise",
+   "q": "Quelle limite est reconnue à la technique du sandwich ?",
+   "choices": [
+    "Elle ne marche qu'à l'écrit",
+    "Elle demande trop de temps",
+    "Chez certains, la critique blesse quand même",
+    "Elle paraît hypocrite aux managers"
+   ],
+   "answer": 2,
+   "explain": "Il faut toujours finir par un compliment, mais sur certaines psychologies la critique pète quand même.",
+   "source": "crise-01-19"
+  },
+  {
+   "id": "crise20",
+   "theme": "crise",
+   "q": "Quel effet a le mot « mais » placé après un compliment par un manager toxique ?",
+   "choices": [
+    "Il renforce le compliment",
+    "Il introduit une nuance utile",
+    "Il adoucit la critique",
+    "Il efface tout ce qui a été dit avant"
+   ],
+   "answer": 3,
+   "explain": "Dans « tu es un super élément, mais... », le mais annule le compliment qui précède.",
+   "source": "crise-01-21"
+  },
+  {
+   "id": "crise21",
+   "theme": "crise",
+   "q": "Que sont les stimuli supra-normaux, aussi appelés hyperstimuli ?",
+   "choices": [
+    "Ce qui nous dépasse et fait surréagir",
+    "Des signaux faibles annonçant une crise",
+    "Des messages médiatiques répétés",
+    "Des stimulations qui apaisent le cerveau"
+   ],
+   "answer": 0,
+   "explain": "Un hyperstimulus est quelque chose qui vous dépasse et provoque une réaction exagérée.",
+   "source": "crise-01-25"
+  },
+  {
+   "id": "crise22",
+   "theme": "crise",
+   "q": "Qu'illustre l'image de la cocotte-minute appliquée à une crise ?",
+   "choices": [
+    "Une crise qui monte lentement et retombe",
+    "Un cumul de tensions qui explose d'un coup",
+    "Une crise maîtrisée par la pression",
+    "Une crise due à un seul événement"
+   ],
+   "answer": 1,
+   "explain": "Les tensions s'accumulent puis explosent, avec moins de charge sur le moment puis de la culpabilité.",
+   "source": "crise-01-28"
+  },
+  {
+   "id": "crise23",
+   "theme": "crise",
+   "q": "Qu'est-ce qui distingue une crise de panique d'une crise d'angoisse ?",
+   "choices": [
+    "Elle dure plus longtemps",
+    "Elle a toujours une cause visible",
+    "Montée d'adrénaline sans danger identifiable",
+    "Elle survient uniquement la nuit"
+   ],
+   "answer": 2,
+   "explain": "Réaction combattre ou fuir, tachycardie, peur bizarre, sans danger identifiable car il est psychologique.",
+   "source": "crise-01-29"
+  },
+  {
+   "id": "crise24",
+   "theme": "crise",
+   "q": "Comment une crise peut-elle se manifester physiquement ?",
+   "choices": [
+    "Toujours par des larmes",
+    "Uniquement par la fatigue",
+    "De la même façon chez tout le monde",
+    "Chaleur, transpiration ou respiration coupée"
+   ],
+   "answer": 3,
+   "explain": "Les manifestations varient selon les personnes : bouffées de chaleur, transpiration, respiration coupée.",
+   "source": "crise-01-27"
+  },
+  {
+   "id": "git01",
+   "theme": "git",
+   "q": "Pourquoi chaque étudiant doit-il créer sa propre plateforme pour le cours CI/CD ?",
+   "choices": [
+    "Avec une plateforme toute faite, pas de CI",
+    "Replit l'impose",
+    "Pour être noté individuellement",
+    "Pour économiser des crédits"
+   ],
+   "answer": 0,
+   "explain": "Sans plateforme à construire, il n'y a rien à intégrer ni à déployer, donc pas de CI.",
+   "source": "git-02-01"
+  },
+  {
+   "id": "git02",
+   "theme": "git",
+   "q": "Quels sont les trois outils de la stack imposée par Ruben ?",
+   "choices": [
+    "Lovable, Cursor, Netlify",
+    "Replit, Claude Code, un repo Git",
+    "Replit, n8n, Supabase",
+    "GitHub, Vercel, Gemini"
+   ],
+   "answer": 1,
+   "explain": "Replit pour la plateforme, Claude Code sur ta machine, un repo Git entre les deux.",
+   "source": "git-02-02"
+  },
+  {
+   "id": "git03",
+   "theme": "git",
+   "q": "Dans le cours, que désigne le mot host ?",
+   "choices": [
+    "Le serveur de Replit",
+    "Le repo GitHub",
+    "Ta propre machine",
+    "L'hébergeur du site"
+   ],
+   "answer": 2,
+   "explain": "Le host, c'est ton ordinateur, celui qui fait tourner Claude Code.",
+   "source": "git-02-03"
+  },
+  {
+   "id": "git04",
+   "theme": "git",
+   "q": "Quelle est la première étape du projet ?",
+   "choices": [
+    "Créer le compte Replit",
+    "Importer un template depuis GitHub",
+    "Faire un git init sur le host",
+    "Spec dans Claude, découpée en lots"
+   ],
+   "answer": 3,
+   "explain": "On spécifie le projet dans Claude, qui le découpe en lots (batches) en Markdown.",
+   "source": "git-02-05"
+  },
+  {
+   "id": "git05",
+   "theme": "git",
+   "q": "Que contient le premier push du repo ?",
+   "choices": [
+    "Le lot 0 produit par Claude",
+    "Un README vide",
+    "Le projet complet",
+    "Les fichiers générés par Replit"
+   ],
+   "answer": 0,
+   "explain": "Claude produit le lot 0, on crée le repo et on pousse ce premier lot.",
+   "source": "git-02-06"
+  },
+  {
+   "id": "git06",
+   "theme": "git",
+   "q": "Comment le projet arrive-t-il dans Replit ?",
+   "choices": [
+    "Par glisser-déposer des fichiers",
+    "Par un import depuis GitHub",
+    "Par une connexion directe à Claude",
+    "Par un zip envoyé au support"
+   ],
+   "answer": 1,
+   "explain": "Replit importe le repo depuis GitHub.",
+   "source": "git-02-07"
+  },
+  {
+   "id": "git07",
+   "theme": "git",
+   "q": "Après une modification dans Replit, que faut-il faire ?",
+   "choices": [
+    "Un pull depuis le host",
+    "Rien, c'est synchronisé",
+    "Un push depuis le shell de Replit",
+    "Un export manuel"
+   ],
+   "answer": 2,
+   "explain": "Replit a un shell : on y fait le push pour envoyer le code vers le repo.",
+   "source": "git-02-08"
+  },
+  {
+   "id": "git08",
+   "theme": "git",
+   "q": "Après les modifications de Claude Code et le push côté host, comment Replit les voit-il ?",
+   "choices": [
+    "Automatiquement",
+    "En relançant l'agent Replit",
+    "En réimportant le projet",
+    "En faisant un pull côté Replit"
+   ],
+   "answer": 3,
+   "explain": "Rien ne remonte tout seul : il faut refaire un pull dans Replit.",
+   "source": "git-02-10"
+  },
+  {
+   "id": "git09",
+   "theme": "git",
+   "q": "Que pense Ruben d'une connexion directe entre Claude et Replit ?",
+   "choices": [
+    "Ça n'a aucun intérêt",
+    "C'est la cible finale",
+    "C'est réservé aux pros",
+    "C'est obligatoire pour la CI"
+   ],
+   "answer": 0,
+   "explain": "Le repo Git au milieu est justement le but de l'exercice.",
+   "source": "git-02-11"
+  },
+  {
+   "id": "git10",
+   "theme": "git",
+   "q": "Dans l'image du ping-pong, que représente la balle ?",
+   "choices": [
+    "Les crédits Replit",
+    "Ton code",
+    "Le prompt",
+    "La note finale"
+   ],
+   "answer": 1,
+   "explain": "Replit à gauche, ton ordinateur à droite, et la balle qui s'échange, c'est ton code.",
+   "source": "git-02-12"
+  },
+  {
+   "id": "git11",
+   "theme": "git",
+   "q": "Pourquoi la code review devient-elle bilatérale dans ce montage ?",
+   "choices": [
+    "GitHub Actions la fait",
+    "Ruben relit chaque commit",
+    "Les deux côtés relisent à chaque passage",
+    "Replit la fait deux fois"
+   ],
+   "answer": 2,
+   "explain": "Replit et Claude Code relisent chacun le code de l'autre à chaque échange.",
+   "source": "git-02-13"
+  },
+  {
+   "id": "git12",
+   "theme": "git",
+   "q": "Quel avantage pratique à modifier le code côté Claude plutôt que dans Replit ?",
+   "choices": [
+    "Claude est plus rapide",
+    "Ça saute l'étape du pull",
+    "Replit n'accepte pas les modifs",
+    "Ça évite de brûler des crédits Replit"
+   ],
+   "answer": 3,
+   "explain": "Les crédits Replit partent vite, le travail côté Claude les préserve.",
+   "source": "git-02-14"
+  },
+  {
+   "id": "git13",
+   "theme": "git",
+   "q": "Quelle est la règle stricte concernant Claude et Git ?",
+   "choices": [
+    "Ne jamais demander de Git à Claude",
+    "Claude fait tous les commits",
+    "Claude ne touche qu'au README",
+    "Claude doit valider chaque push"
+   ],
+   "answer": 0,
+   "explain": "Claude sert à prompter et construire les lots, les commandes Git se font à la main.",
+   "source": "git-02-16"
+  },
+  {
+   "id": "git14",
+   "theme": "git",
+   "q": "Quels sont les trois bénéfices visés par l'exercice ?",
+   "choices": [
+    "Vitesse, design, SEO",
+    "Robustesse, sécurité, importance de Git",
+    "Tests, docs, déploiement",
+    "Coût, UX, scalabilité"
+   ],
+   "answer": 1,
+   "explain": "Robustesse par la revue croisée, sécurité, et comprendre pourquoi Git compte.",
+   "source": "git-02-18"
+  },
+  {
+   "id": "git15",
+   "theme": "git",
+   "q": "Comment Ruben compte-t-il faire sentir l'importance de Git ?",
+   "choices": [
+    "Par un QCM",
+    "En supprimant les comptes Replit",
+    "En cassant volontairement quelque chose",
+    "En notant les messages de commit"
+   ],
+   "answer": 2,
+   "explain": "Il prévoit des aléas dans le projet pour que Git serve de filet.",
+   "source": "git-02-19"
+  },
+  {
+   "id": "git16",
+   "theme": "git",
+   "q": "Quels sont les livrables attendus ?",
+   "choices": [
+    "Une vidéo démo",
+    "Le lien Replit seul",
+    "Un PDF de spec",
+    "Les lots en Markdown et le repo complet"
+   ],
+   "answer": 3,
+   "explain": "Les lots Markdown et le repo Git complet.",
+   "source": "git-02-21"
+  },
+  {
+   "id": "git17",
+   "theme": "git",
+   "q": "Quel est le témoin de réussite de l'exercice ?",
+   "choices": [
+    "Le repo",
+    "La note de Ruben",
+    "Le nombre de prompts",
+    "Le temps passé"
+   ],
+   "answer": 0,
+   "explain": "Si le repo est complet, l'exercice est réussi, sinon il manquait quelque chose.",
+   "source": "git-02-22"
+  },
+  {
+   "id": "git18",
+   "theme": "git",
+   "q": "Quelle limite de Replit justifie le passage par un repo Git ?",
+   "choices": [
+    "Pas de terminal",
+    "Pas de vrai gestionnaire de fichiers",
+    "Pas de base de données",
+    "Pas d'agent IA"
+   ],
+   "answer": 1,
+   "explain": "On push, on récupère sur le PC, on modifie, on réinjecte.",
+   "source": "git-02-20"
+  },
+  {
+   "id": "g01",
+   "theme": "jeu",
+   "q": "Combien de lettres faut-il ramasser pour faire un GLOW UP ?",
+   "choices": [
+    "5",
+    "7",
+    "9",
+    "3"
+   ],
+   "answer": 1,
+   "explain": "A N T O U K A, sept lettres"
+  },
+  {
+   "id": "g02",
+   "theme": "jeu",
+   "q": "Que se passe-t-il quand un bug te touche ?",
+   "choices": [
+    "GLOW DOWN",
+    "GLOW UP",
+    "Rien",
+    "Tu gagnes une lettre"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "g03",
+   "theme": "jeu",
+   "q": "Quand peut-on frapper Carl ?",
+   "choices": [
+    "Quand il court",
+    "Quand il souffle",
+    "Jamais",
+    "Quand il crache"
+   ],
+   "answer": 1
+  },
+  {
+   "id": "g04",
+   "theme": "jeu",
+   "q": "A quel tempo bat le niveau ?",
+   "choices": [
+    "60 BPM",
+    "90 BPM",
+    "120 BPM",
+    "180 BPM"
+   ],
+   "answer": 2
+  },
+  {
+   "id": "g05",
+   "theme": "jeu",
+   "q": "Quelle touche declenche le pouvoir du perso ?",
+   "choices": [
+    "E",
+    "P",
+    "M",
+    "S"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "g06",
+   "theme": "jeu",
+   "q": "Que crache Ruben ?",
+   "choices": [
+    "Des 404",
+    "Des antouka",
+    "Des SQE",
+    "Des lettres"
+   ],
+   "answer": 1
+  },
+  {
+   "id": "g07",
+   "theme": "jeu",
+   "q": "Quel perso boit un verre pour regagner du glow ?",
+   "choices": [
+    "LOU",
+    "KARDO",
+    "VIBCOBIDA",
+    "MOKO"
+   ],
+   "answer": 2
+  },
+  {
+   "id": "g08",
+   "theme": "jeu",
+   "q": "Que fait KARDO avec la touche E ?",
+   "choices": [
+    "Il fonce",
+    "Il devient invisible, en visio",
+    "Il envoie des weeeeesssshh",
+    "Il boit"
+   ],
+   "answer": 1
+  },
+  {
+   "id": "g09",
+   "theme": "jeu",
+   "q": "A partir de quel glow peut-on poser une plateforme { } en l'air ?",
+   "choices": [
+    "1 .0",
+    "2 .0",
+    "3 .0",
+    "Jamais"
+   ],
+   "answer": 1
+  },
+  {
+   "id": "g10",
+   "theme": "jeu",
+   "q": "Les plateformes en pointilles existent...",
+   "choices": [
+    "Tout le temps",
+    "Seulement sur le temps",
+    "Seulement la nuit",
+    "Seulement au glow 3"
+   ],
+   "answer": 1
+  },
+  {
+   "id": "g11",
+   "theme": "jeu",
+   "q": "Que se passe-t-il si tu es touche au glow 1 .0 ?",
+   "choices": [
+    "GLOW OFF, retour au dernier SAVE",
+    "Rien",
+    "Tu gagnes un pouvoir",
+    "Le boss meurt"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "g12",
+   "theme": "jeu",
+   "q": "Quel perso est le plus rapide ?",
+   "choices": [
+    "LOU",
+    "VIBCOBIDA",
+    "KARDO",
+    "MOKO"
+   ],
+   "answer": 3
+  },
+  {
+   "id": "rgaa01",
+   "theme": "rgaa",
+   "q": "Lequel de ces cas illustre un handicap situationnel ?",
+   "choices": [
+    "Pas d'écouteurs dans le métro",
+    "Une cécité de naissance",
+    "Une surdité profonde",
+    "Une paralysie des jambes"
+   ],
+   "answer": 0,
+   "explain": "Le handicap peut être temporaire ou situationnel : un contexte empêche d'utiliser normalement l'écran.",
+   "source": "rgaa-01-01"
+  },
+  {
+   "id": "rgaa02",
+   "theme": "rgaa",
+   "q": "Quel handicap est le plus facile à pallier sur un site web ?",
+   "choices": [
+    "Le handicap moteur",
+    "La surdité",
+    "La cécité",
+    "La dyslexie"
+   ],
+   "answer": 1,
+   "explain": "Des transcriptions et des sous-titres suffisent à rendre le contenu accessible aux sourds.",
+   "source": "rgaa-01-02"
+  },
+  {
+   "id": "rgaa03",
+   "theme": "rgaa",
+   "q": "Au clavier, quelles touches activent un élément qui a le focus ?",
+   "choices": [
+    "Tabulation",
+    "Les flèches",
+    "Entrée ou espace",
+    "Échap"
+   ],
+   "answer": 2,
+   "explain": "Tab déplace le focus, entrée ou espace déclenchent l'action, essentiel pour le handicap moteur.",
+   "source": "rgaa-01-03"
+  },
+  {
+   "id": "rgaa04",
+   "theme": "rgaa",
+   "q": "Pourquoi un bon support clavier rend-il utilisables plage braille, souris à la tête et contrôle au souffle ?",
+   "choices": [
+    "Ils passent par la souris",
+    "Ils lisent l'écran directement",
+    "Ils utilisent le tactile",
+    "Ils simulent tous un clavier"
+   ],
+   "answer": 3,
+   "explain": "Ces dispositifs d'assistance envoient des événements clavier au navigateur.",
+   "source": "rgaa-01-04"
+  },
+  {
+   "id": "rgaa05",
+   "theme": "rgaa",
+   "q": "Que provoque la suppression de l'indicateur de focus pour des raisons esthétiques ?",
+   "choices": [
+    "On ne sait plus où on est en tabulant",
+    "Le site devient plus rapide",
+    "Le lecteur d'écran se coupe",
+    "Rien, c'est purement visuel"
+   ],
+   "answer": 0,
+   "explain": "Sans focus visible, la navigation au clavier devient impossible à suivre.",
+   "source": "rgaa-01-05"
+  },
+  {
+   "id": "rgaa06",
+   "theme": "rgaa",
+   "q": "Qu'a changé la directive européenne de 2025 pour l'accessibilité numérique ?",
+   "choices": [
+    "Elle a créé les premières obligations",
+    "Elle a donné un pouvoir de sanction",
+    "Elle a supprimé le RGAA",
+    "Elle a rendu l'audit facultatif"
+   ],
+   "answer": 1,
+   "explain": "Avant 2025, des obligations mais aucune amende ; désormais Arcom, ARCEP ou DGCCRF peuvent sanctionner.",
+   "source": "rgaa-01-06"
+  },
+  {
+   "id": "rgaa07",
+   "theme": "rgaa",
+   "q": "Pourquoi Carrefour et Picard ont-ils été sanctionnés ?",
+   "choices": [
+    "Publicité trompeuse en ligne",
+    "Fuite de données clients",
+    "Sites inaccessibles bloquant la commande",
+    "Absence de mentions légales"
+   ],
+   "answer": 2,
+   "explain": "Leurs sites non accessibles empêchaient des personnes handicapées de commander en ligne.",
+   "source": "rgaa-01-07"
+  },
+  {
+   "id": "rgaa08",
+   "theme": "rgaa",
+   "q": "Laquelle de ces publications fait partie des trois obligations légales d'accessibilité ?",
+   "choices": [
+    "Un rapport RSE annuel",
+    "Une charte graphique",
+    "Un audit de sécurité",
+    "Un schéma pluriannuel"
+   ],
+   "answer": 3,
+   "explain": "Les trois : niveau de conformité affiché, déclaration d'accessibilité, schéma pluriannuel.",
+   "source": "rgaa-01-08"
+  },
+  {
+   "id": "rgaa09",
+   "theme": "rgaa",
+   "q": "Depuis le 28 juin 2025, que doit respecter tout nouveau produit ou service mis en ligne ?",
+   "choices": [
+    "Être accessible dès sa mise en ligne",
+    "Avoir un délai de grâce de 5 ans",
+    "Déclarer son chiffre d'affaires",
+    "Passer un audit payant"
+   ],
+   "answer": 0,
+   "explain": "Le neuf doit être accessible tout de suite ; les services existants ont 5 ans de grâce.",
+   "source": "rgaa-01-09"
+  },
+  {
+   "id": "rgaa10",
+   "theme": "rgaa",
+   "q": "Qui édite les WCAG, à l'origine du RGAA français ?",
+   "choices": [
+    "L'Arcom",
+    "Le W3C",
+    "La Commission européenne",
+    "L'AFNOR"
+   ],
+   "answer": 1,
+   "explain": "Les WCAG du W3C sont déclinées au niveau européen puis en France dans le RGAA.",
+   "source": "rgaa-01-10"
+  },
+  {
+   "id": "rgaa11",
+   "theme": "rgaa",
+   "q": "Combien de critères compte le RGAA version 4 ?",
+   "choices": [
+    "13",
+    "50",
+    "106",
+    "258"
+   ],
+   "answer": 2,
+   "explain": "Le RGAA 4 compte 13 thématiques, 106 critères et 258 tests unitaires.",
+   "source": "rgaa-01-11"
+  },
+  {
+   "id": "rgaa12",
+   "theme": "rgaa",
+   "q": "Pourquoi préférer la balise button à une div avec écouteurs d'événements ?",
+   "choices": [
+    "La div est plus lente",
+    "Le CSS ne s'applique pas aux div",
+    "La div n'accepte pas le clic",
+    "Le natif donne focus et rôle bouton"
+   ],
+   "answer": 3,
+   "explain": "Le bouton natif reçoit le focus clavier et est annoncé comme bouton au lecteur d'écran.",
+   "source": "rgaa-01-12"
+  },
+  {
+   "id": "rgaa13",
+   "theme": "rgaa",
+   "q": "Comment traiter l'attribut alt d'une image purement décorative ?",
+   "choices": [
+    "alt vide, le lecteur l'ignore",
+    "Pas d'attribut alt du tout",
+    "alt avec le nom du fichier",
+    "alt décrivant les couleurs"
+   ],
+   "answer": 0,
+   "explain": "alt est obligatoire sur toute image ; vide, le lecteur d'écran saute l'image.",
+   "source": "rgaa-01-13"
+  },
+  {
+   "id": "rgaa14",
+   "theme": "rgaa",
+   "q": "Que doit contenir l'alt d'une affiche d'événement avec date, heure et lieu ?",
+   "choices": [
+    "Le mot affiche seulement",
+    "La date, l'heure et le lieu",
+    "Rien, c'est décoratif",
+    "Le nom du graphiste"
+   ],
+   "answer": 1,
+   "explain": "Une image porte de l'information si on perd quelque chose en la retirant : tout doit être dans l'alt.",
+   "source": "rgaa-01-14"
+  },
+  {
+   "id": "rgaa15",
+   "theme": "rgaa",
+   "q": "Pourquoi dix liens cliquez ici posent-ils problème au lecteur d'écran ?",
+   "choices": [
+    "Ils ralentissent la page",
+    "Ils sont trop courts à cliquer",
+    "Listés hors contexte, ils sont identiques",
+    "Ils cassent le référencement"
+   ],
+   "answer": 2,
+   "explain": "Un lecteur d'écran peut lister tous les liens : l'intitulé doit être présent et explicite.",
+   "source": "rgaa-01-16"
+  },
+  {
+   "id": "rgaa16",
+   "theme": "rgaa",
+   "q": "Quelle thématique du RGAA est la plus difficile à traiter ?",
+   "choices": [
+    "Les images",
+    "Les liens",
+    "Les couleurs",
+    "Les scripts"
+   ],
+   "answer": 3,
+   "explain": "Un composant JavaScript doit être utilisable au clavier et son état restitué au lecteur d'écran.",
+   "source": "rgaa-01-17"
+  },
+  {
+   "id": "rgaa17",
+   "theme": "rgaa",
+   "q": "Comment se comporte une modale bien faite ?",
+   "choices": [
+    "Elle piège le focus et se ferme avec échap",
+    "Elle bloque tout le clavier",
+    "Elle laisse tabuler derrière elle",
+    "Elle se ferme seule après 5 secondes"
+   ],
+   "answer": 0,
+   "explain": "Sur beaucoup de sites la tabulation passe derrière la modale, ce qui perd l'utilisateur.",
+   "source": "rgaa-01-19"
+  },
+  {
+   "id": "rgaa18",
+   "theme": "rgaa",
+   "q": "Que se passe-t-il si aria-hidden true est posé sur la balise racine ?",
+   "choices": [
+    "Le site passe en mode sombre",
+    "Tout le site disparaît au lecteur d'écran",
+    "Le CSS est désactivé",
+    "Les images perdent leur alt"
+   ],
+   "answer": 1,
+   "explain": "aria-hidden true masque un élément au lecteur d'écran comme s'il n'existait pas.",
+   "source": "rgaa-01-21"
+  },
+  {
+   "id": "rgaa19",
+   "theme": "rgaa",
+   "q": "Quelle est la première règle d'ARIA ?",
+   "choices": [
+    "Mettre un rôle sur chaque balise",
+    "L'utiliser sur tous les boutons",
+    "Ne pas l'utiliser si le HTML suffit",
+    "Doubler chaque alt par aria-label"
+   ],
+   "answer": 2,
+   "explain": "Si le HTML natif permet de faire la chose, on le fait en HTML ; ARIA reste le dernier recours.",
+   "source": "rgaa-01-22"
+  },
+  {
+   "id": "rgaa20",
+   "theme": "rgaa",
+   "q": "Quel test rapide vérifie qu'un label est bien relié à son champ ?",
+   "choices": [
+    "Survoler le champ avec la souris",
+    "Désactiver le CSS",
+    "Zoomer à 200 pour cent",
+    "Cliquer le libellé sélectionne le champ"
+   ],
+   "answer": 3,
+   "explain": "Sinon le for du label ne pointe pas vers l'id de l'input.",
+   "source": "rgaa-01-25"
+  },
+  {
+   "id": "rgaa21",
+   "theme": "rgaa",
+   "q": "Pourquoi un placeholder ne compte-t-il pas comme étiquette de champ ?",
+   "choices": [
+    "Il disparaît dès qu'on tape",
+    "Il n'est pas traduit",
+    "Il est trop petit",
+    "Il n'est pas stylable"
+   ],
+   "answer": 0,
+   "explain": "La relecture d'un formulaire d'adresse à cinq lignes devient impossible sans étiquette visible.",
+   "source": "rgaa-01-26"
+  },
+  {
+   "id": "rgaa22",
+   "theme": "rgaa",
+   "q": "À quoi sert le lien d'évitement ?",
+   "choices": [
+    "Quitter le site rapidement",
+    "Sauter au contenu sans traverser le menu",
+    "Signaler un contenu inaccessible",
+    "Désactiver les animations"
+   ],
+   "answer": 1,
+   "explain": "Un des premiers éléments tabulables, souvent invisible au repos, il évite 50 liens de navigation.",
+   "source": "rgaa-01-27"
+  },
+  {
+   "id": "rgaa23",
+   "theme": "rgaa",
+   "q": "Quel lien existe entre conforme et accessible ?",
+   "choices": [
+    "Les deux mots sont synonymes",
+    "Accessible implique conforme",
+    "Conforme ne garantit pas accessible",
+    "Non conforme peut être accessible"
+   ],
+   "answer": 2,
+   "explain": "Conforme = respecte le RGAA ; accessible = utilisable ; non conforme implique non accessible.",
+   "source": "rgaa-01-28"
+  },
+  {
+   "id": "rgaa24",
+   "theme": "rgaa",
+   "q": "Combien coûte environ le lecteur d'écran JAWS ?",
+   "choices": [
+    "Il est gratuit",
+    "100 euros",
+    "10 000 euros",
+    "1 000 euros"
+   ],
+   "answer": 3,
+   "explain": "NVDA est gratuit ; VoiceOver et TalkBack sont intégrés à iOS et Android.",
+   "source": "rgaa-01-32"
+  },
+  {
+   "id": "rgaa25",
+   "theme": "rgaa",
+   "q": "Quel ratio de contraste correspond à du noir sur blanc ?",
+   "choices": [
+    "21",
+    "1",
+    "3",
+    "4,5"
+   ],
+   "answer": 0,
+   "explain": "Le ratio va de 1 (blanc sur blanc) à 21 ; le seuil RGAA est 3 ou 4,5 selon taille et graisse.",
+   "source": "rgaa-01-34"
+  },
+  {
+   "id": "rgaa26",
+   "theme": "rgaa",
+   "q": "Sur 10 pages d'échantillon, 9 sont conformes à un critère et 1 ne l'est pas. Résultat ?",
+   "choices": [
+    "Critère conforme à 90 pour cent",
+    "Critère KO",
+    "Critère partiellement conforme",
+    "Critère non applicable"
+   ],
+   "answer": 1,
+   "explain": "Un critère n'est conforme que s'il l'est sur toutes les pages, donc la note baisse très vite.",
+   "source": "rgaa-01-35"
+  },
+  {
+   "id": "rgaa27",
+   "theme": "rgaa",
+   "q": "Comment se calcule le taux de conformité RGAA ?",
+   "choices": [
+    "Pages conformes sur pages auditées",
+    "Tests réussis sur 258",
+    "Critères conformes sur applicables",
+    "Thématiques OK sur 13"
+   ],
+   "answer": 2,
+   "explain": "Moins de 50 pour cent non conforme, 50 à 99 partiellement conforme, 100 conforme.",
+   "source": "rgaa-01-36"
+  },
+  {
+   "id": "rgaa28",
+   "theme": "rgaa",
+   "q": "Un aria-hidden sur la racine laisse 98 pour cent de conformité. Que montre cet exemple ?",
+   "choices": [
+    "ARIA améliore le score",
+    "Le site est quasi parfait",
+    "Le calcul est faux",
+    "Le taux ignore l'impact utilisateur"
+   ],
+   "answer": 3,
+   "explain": "Le site reste inutilisable au lecteur d'écran malgré un taux très élevé.",
+   "source": "rgaa-01-37"
+  },
+  {
+   "id": "rgaa29",
+   "theme": "rgaa",
+   "q": "La dérogation pour charge disproportionnée dispense-t-elle d'une alternative accessible ?",
+   "choices": [
+    "Non, une alternative reste due",
+    "Oui, totalement",
+    "Oui, si l'auditeur la propose",
+    "Oui, pendant 3 ans"
+   ],
+   "answer": 0,
+   "explain": "Ex : saisie manuelle à côté d'un date picker ; l'auditeur signale le KO sans proposer la dérogation.",
+   "source": "rgaa-01-38"
+  },
+  {
+   "id": "rgaa30",
+   "theme": "rgaa",
+   "q": "Pourquoi un paragraphe doit-il être une balise p et non une div ?",
+   "choices": [
+    "La div n'accepte pas de texte",
+    "Raccourci paragraphe suivant du lecteur",
+    "Le p est mieux indexé par Google",
+    "La div est dépréciée en HTML5"
+   ],
+   "answer": 1,
+   "explain": "Le lecteur d'écran a un raccourci paragraphe suivant qui ne fonctionne qu'avec des p.",
+   "source": "rgaa-02-01"
+  },
+  {
+   "id": "rgaa31",
+   "theme": "rgaa",
+   "q": "Que vérifie le test RGAA consistant à désactiver le CSS ?",
+   "choices": [
+    "Que le site charge plus vite",
+    "Que les couleurs contrastent",
+    "Qu'aucune information n'est perdue",
+    "Que le HTML est valide"
+   ],
+   "answer": 2,
+   "explain": "Un site mettait son texte dans des images de fond, invisibles sans CSS et au lecteur d'écran.",
+   "source": "rgaa-02-05"
+  },
+  {
+   "id": "rgaa32",
+   "theme": "rgaa",
+   "q": "Lequel de ces libellés viole la règle sur l'information véhiculée uniquement par la couleur ?",
+   "choices": [
+    "Cliquez sur Valider",
+    "Cliquez sur le bouton Envoyer",
+    "Cliquez sur Suivant",
+    "Cliquez sur le bouton rouge"
+   ],
+   "answer": 3,
+   "explain": "Ne jamais véhiculer une info uniquement par la couleur, la forme, la taille ou la position.",
+   "source": "rgaa-02-08"
+  },
+  {
+   "id": "rgaa33",
+   "theme": "rgaa",
+   "q": "Quelle alternative donner à un drag and drop pour réordonner une liste ?",
+   "choices": [
+    "Flèches haut et bas",
+    "Un geste de pinch",
+    "Secouer le téléphone",
+    "Aucune, c'est une exception"
+   ],
+   "answer": 0,
+   "explain": "Tout geste complexe doit avoir une alternative par pressions simples ; seul le dessin fait exception.",
+   "source": "rgaa-02-12"
+  },
+  {
+   "id": "rgaa34",
+   "theme": "rgaa",
+   "q": "Pourquoi une action au pointeur doit-elle se déclencher au relâchement et non à l'appui ?",
+   "choices": [
+    "Pour éviter le double clic",
+    "Pour pouvoir annuler en sortant du bouton",
+    "Pour économiser la batterie",
+    "Pour fluidifier l'animation"
+   ],
+   "answer": 1,
+   "explain": "Une personne qui tremble peut sortir du bouton avant de relâcher et annuler.",
+   "source": "rgaa-02-13"
+  },
+  {
+   "id": "rgpd01",
+   "theme": "rgpd",
+   "q": "Quel est le périmètre géographique du RGPD ?",
+   "choices": [
+    "Les 27 États membres de l'UE",
+    "La France uniquement",
+    "L'Europe et les États-Unis",
+    "Le monde entier"
+   ],
+   "answer": 0,
+   "explain": "C'est un règlement de l'Union européenne qui harmonise le droit des 27 États membres.",
+   "source": "rgpd-01-01"
+  },
+  {
+   "id": "rgpd02",
+   "theme": "rgpd",
+   "q": "Que désigne le principe d'accountability dans le RGPD ?",
+   "choices": [
+    "L'obligation de nommer un DPO",
+    "Pouvoir démontrer à tout moment sa conformité",
+    "Déclarer chaque fichier à la CNIL",
+    "Payer une redevance annuelle"
+   ],
+   "answer": 1,
+   "explain": "Contrairement au droit classique, c'est à l'entreprise de prouver qu'elle respecte le règlement.",
+   "source": "rgpd-01-02"
+  },
+  {
+   "id": "rgpd03",
+   "theme": "rgpd",
+   "q": "Quelle est la plus grosse sanction RGPD prononcée à ce jour ?",
+   "choices": [
+    "Google, 325 millions d'euros",
+    "Uber, 825 millions d'euros",
+    "Meta, 1,2 milliard d'euros",
+    "Orange, 50 millions d'euros"
+   ],
+   "answer": 2,
+   "explain": "Meta a été condamnée à 1,2 milliard d'euros par l'autorité irlandaise.",
+   "source": "rgpd-01-06"
+  },
+  {
+   "id": "rgpd04",
+   "theme": "rgpd",
+   "q": "Quel est le plafond des amendes administratives prévu par le RGPD ?",
+   "choices": [
+    "1 pour cent du CA ou 1 million d'euros",
+    "2 pour cent du CA ou 10 millions d'euros",
+    "10 pour cent du CA mondial",
+    "4 pour cent du CA mondial ou 20 millions"
+   ],
+   "answer": 3,
+   "explain": "Le plus élevé des deux est retenu, donc même un auto-entrepreneur risque en théorie 20 millions.",
+   "source": "rgpd-01-07"
+  },
+  {
+   "id": "rgpd05",
+   "theme": "rgpd",
+   "q": "Quels cookies peuvent être déposés sans consentement ?",
+   "choices": [
+    "Les cookies techniques comme la langue",
+    "Les cookies de mesure d'audience",
+    "Les cookies de publicité ciblée",
+    "Les embeds de réseaux sociaux"
+   ],
+   "answer": 0,
+   "explain": "Audience, pub ciblée et embeds sociaux exigent le consentement avant tout dépôt.",
+   "source": "rgpd-01-11"
+  },
+  {
+   "id": "rgpd06",
+   "theme": "rgpd",
+   "q": "Pourquoi la CNIL a-t-elle rendu publique la sanction de Google ?",
+   "choices": [
+    "La loi l'oblige à publier",
+    "Un choix volontaire pour peser sur l'image",
+    "Google l'a demandé",
+    "Le tribunal l'a exigé"
+   ],
+   "answer": 1,
+   "explain": "La CNIL n'est pas un tribunal, ses décisions administratives n'ont pas à être publiées.",
+   "source": "rgpd-01-12"
+  },
+  {
+   "id": "rgpd07",
+   "theme": "rgpd",
+   "q": "Comment les CNIL européennes traitent-elles un gros dossier comme Meta ?",
+   "choices": [
+    "Chaque pays sanctionne séparément",
+    "Seule la CNIL française agit",
+    "Une autorité chef de file coordonne",
+    "La Commission européenne décide seule"
+   ],
+   "answer": 2,
+   "explain": "Irlande pour Meta, Pays-Bas pour Uber, France pour Google, et l'amende est répartie entre États.",
+   "source": "rgpd-01-13"
+  },
+  {
+   "id": "rgpd08",
+   "theme": "rgpd",
+   "q": "Parmi ces données, laquelle est une donnée sensible au sens du RGPD ?",
+   "choices": [
+    "Les données bancaires",
+    "L'adresse postale",
+    "Le numéro de téléphone",
+    "L'appartenance syndicale"
+   ],
+   "answer": 3,
+   "explain": "Santé, opinions, origine, syndicat, NIR, condamnations ; le bancaire n'en fait pas partie.",
+   "source": "rgpd-01-17"
+  },
+  {
+   "id": "rgpd09",
+   "theme": "rgpd",
+   "q": "Au bout de combien de temps la CNIL recommande-t-elle de supprimer un compte inactif ?",
+   "choices": [
+    "2 ou 3 ans après la dernière activité",
+    "6 mois sans connexion",
+    "10 ans, comme une facture",
+    "Jamais, le compte appartient au client"
+   ],
+   "answer": 0,
+   "explain": "Après relances ; la raison principale est la sécurité, un compte oublié reste exposé.",
+   "source": "rgpd-01-22"
+  },
+  {
+   "id": "rgpd10",
+   "theme": "rgpd",
+   "q": "Quelle peine maximale le code pénal prévoit-il pour un abus de données personnelles ?",
+   "choices": [
+    "1 an et 15 000 euros",
+    "5 ans et 300 000 euros",
+    "10 ans et 1 million d'euros",
+    "Une simple amende de 20 millions"
+   ],
+   "answer": 1,
+   "explain": "Au-delà de la CNIL, l'individu risque 5 ans de prison et 300 000 euros d'amende.",
+   "source": "rgpd-01-25"
+  },
+  {
+   "id": "rgpd11",
+   "theme": "rgpd",
+   "q": "Qu'est-ce qui caractérise le responsable de traitement ?",
+   "choices": [
+    "Il héberge les serveurs",
+    "Il traite sur instructions d'un client",
+    "Il détermine les finalités et les moyens",
+    "Il contrôle les entreprises pour la CNIL"
+   ],
+   "answer": 2,
+   "explain": "Le pourquoi et le comment : pour le Codex de l'école, c'est l'école, pas l'hébergeur.",
+   "source": "rgpd-01-26"
+  },
+  {
+   "id": "rgpd12",
+   "theme": "rgpd",
+   "q": "Quel statut RGPD a une application no-code qui stocke des données personnelles chez elle ?",
+   "choices": [
+    "Aucun, c'est un simple outil",
+    "Responsable de traitement",
+    "Autorité de contrôle",
+    "Sous-traitant"
+   ],
+   "answer": 3,
+   "explain": "Le sous-traitant traite pour le compte du responsable et a ses propres obligations.",
+   "source": "rgpd-01-27"
+  },
+  {
+   "id": "rgpd13",
+   "theme": "rgpd",
+   "q": "Pour quel traitement le consentement est-il obligatoirement requis ?",
+   "choices": [
+    "La prospection par email, SMS et téléphone",
+    "La déclaration fiscale",
+    "La facturation d'un client",
+    "La gestion de la paie"
+   ],
+   "answer": 0,
+   "explain": "Le consentement n'est pas le seul fondement, mais il s'impose pour prospection, sensible et géoloc.",
+   "source": "rgpd-01-29"
+  },
+  {
+   "id": "rgpd14",
+   "theme": "rgpd",
+   "q": "Quels sont les quatre critères cumulatifs d'un consentement valable ?",
+   "choices": [
+    "Écrit, signé, daté, archivé",
+    "Libre, spécifique, éclairé, univoque",
+    "Gratuit, simple, rapide, révocable",
+    "Clair, loyal, limité, sécurisé"
+   ],
+   "answer": 1,
+   "explain": "Si un seul critère tombe, le consentement est réputé jamais obtenu.",
+   "source": "rgpd-01-30"
+  },
+  {
+   "id": "rgpd15",
+   "theme": "rgpd",
+   "q": "Que signifie un consentement univoque ?",
+   "choices": [
+    "Il est donné une seule fois",
+    "Il concerne une seule finalité",
+    "Il résulte d'un acte positif clair",
+    "Il est écrit en une seule langue"
+   ],
+   "answer": 2,
+   "explain": "Cases précochées, switchs activés par défaut, silence et inaction ne valent pas consentement.",
+   "source": "rgpd-01-34"
+  },
+  {
+   "id": "rgpd16",
+   "theme": "rgpd",
+   "q": "Combien de temps une facture doit-elle être conservée selon le code de commerce ?",
+   "choices": [
+    "2 ans",
+    "3 ans",
+    "5 ans",
+    "10 ans"
+   ],
+   "answer": 3,
+   "explain": "La durée vient d'abord de la loi : paie 5 ans, facture 10 ans, dossier médical 20 ans minimum.",
+   "source": "rgpd-01-40"
+  },
+  {
+   "id": "rgpd17",
+   "theme": "rgpd",
+   "q": "Jusqu'à quand conserve-t-on une donnée après la fin de la finalité ?",
+   "choices": [
+    "Le délai de prescription d'un contentieux",
+    "Jamais, suppression immédiate",
+    "Un an calendaire",
+    "Tant que le client ne réclame pas"
+   ],
+   "answer": 0,
+   "explain": "Supprimer dès la fin du contrat empêcherait de se défendre devant un médiateur ou un juge.",
+   "source": "rgpd-02-01"
+  },
+  {
+   "id": "rgpd18",
+   "theme": "rgpd",
+   "q": "Combien de temps la CNIL recommande-t-elle de garder le CV d'un candidat non retenu ?",
+   "choices": [
+    "6 mois",
+    "2 ans",
+    "3 ans",
+    "5 ans"
+   ],
+   "answer": 1,
+   "explain": "Comptes et prospects inactifs 3 ans, CV non retenus 2 ans ; le CV d'un embauché suit la relation.",
+   "source": "rgpd-02-02"
+  },
+  {
+   "id": "rgpd19",
+   "theme": "rgpd",
+   "q": "Qui fixe la durée de conservation quand ni la loi ni la CNIL ne disent rien ?",
+   "choices": [
+    "Le sous-traitant",
+    "Le DPO européen",
+    "Le responsable de traitement",
+    "Le tribunal de commerce"
+   ],
+   "answer": 2,
+   "explain": "Il fixe lui-même une durée raisonnable et proportionnée à la finalité.",
+   "source": "rgpd-02-04"
+  },
+  {
+   "id": "rgpd20",
+   "theme": "rgpd",
+   "q": "Quelle donnée sort totalement du champ du RGPD ?",
+   "choices": [
+    "Une donnée chiffrée",
+    "Une donnée pseudonymisée",
+    "Une donnée archivée",
+    "Une donnée totalement anonymisée"
+   ],
+   "answer": 3,
+   "explain": "Chiffrement et pseudonymisation ne suffisent pas ; seule l'anonymisation permet de garder sans limite.",
+   "source": "rgpd-02-08"
+  },
+  {
+   "id": "rgpd21",
+   "theme": "rgpd",
+   "q": "De quelle nature est l'obligation de sécurité du RGPD ?",
+   "choices": [
+    "Une obligation de moyens",
+    "Une obligation de résultat",
+    "Une simple recommandation",
+    "Une obligation d'assurance"
+   ],
+   "answer": 0,
+   "explain": "On est sanctionné pour ne pas avoir tout fait, pas pour avoir été piraté.",
+   "source": "rgpd-02-11"
+  },
+  {
+   "id": "rgpd22",
+   "theme": "rgpd",
+   "q": "Qu'est-ce qu'une violation de données au sens du RGPD ?",
+   "choices": [
+    "Uniquement un piratage externe",
+    "Accès ou divulgation illégitime, ou perte",
+    "Seulement une fuite intentionnelle",
+    "Un refus de droit d'accès"
+   ],
+   "answer": 1,
+   "explain": "Perte partielle ou totale comprise ; l'intention ne compte pas.",
+   "source": "rgpd-02-12"
+  },
+  {
+   "id": "rgpd23",
+   "theme": "rgpd",
+   "q": "Une clé USB non chiffrée avec des données clients est perdue. Que faire ?",
+   "choices": [
+    "Rien sans preuve de récupération",
+    "Attendre une plainte",
+    "Notifier la violation à la CNIL",
+    "Changer les mots de passe internes"
+   ],
+   "answer": 2,
+   "explain": "Même sans preuve, c'est une violation ; chiffrée, on aurait pu estimer l'absence de risque.",
+   "source": "rgpd-02-15"
+  },
+  {
+   "id": "rgpd24",
+   "theme": "rgpd",
+   "q": "Qu'est-ce que la pseudonymisation ?",
+   "choices": [
+    "Suppression définitive des identifiants",
+    "Chiffrement de la base de données",
+    "Anonymisation irréversible",
+    "Données fictives avec table de concordance"
+   ],
+   "answer": 3,
+   "explain": "Bruce Wayne remplace le vrai nom, mais ça reste soumis au RGPD contrairement à l'anonymisation.",
+   "source": "rgpd-02-19"
+  },
+  {
+   "id": "rgpd25",
+   "theme": "rgpd",
+   "q": "Sous quel délai faut-il notifier une violation de données à la CNIL ?",
+   "choices": [
+    "72 heures, week-ends compris",
+    "72 heures ouvrées",
+    "7 jours",
+    "1 mois"
+   ],
+   "answer": 0,
+   "explain": "Un incident le vendredi soir se notifie avant le lundi soir.",
+   "source": "rgpd-02-20"
+  },
+  {
+   "id": "rgpd26",
+   "theme": "rgpd",
+   "q": "Quand faut-il aussi prévenir les personnes concernées par une violation ?",
+   "choices": [
+    "Toujours, quel que soit le risque",
+    "Si le risque pour elles est élevé",
+    "Jamais, c'est le rôle de la CNIL",
+    "Seulement si la presse en parle"
+   ],
+   "answer": 1,
+   "explain": "Par mail ou courrier, pour qu'elles changent de mot de passe et se méfient des faux conseillers.",
+   "source": "rgpd-02-21"
+  },
+  {
+   "id": "rgpd27",
+   "theme": "rgpd",
+   "q": "Quel est le délai normal de réponse à une demande de droit d'accès ?",
+   "choices": [
+    "72 heures",
+    "15 jours",
+    "1 mois, 3 maximum si complexe",
+    "6 mois"
+   ],
+   "answer": 2,
+   "explain": "Copie gratuite de ses données, sans justification, auprès de n'importe quelle entreprise.",
+   "source": "rgpd-02-25"
+  },
+  {
+   "id": "rgpd28",
+   "theme": "rgpd",
+   "q": "Que se passe-t-il quand on clique sur se désabonner d'une newsletter ?",
+   "choices": [
+    "L'email est effacé de la base",
+    "Toutes les données sont supprimées",
+    "Le compte client est fermé",
+    "L'opposition joue, l'email reste stocké"
+   ],
+   "answer": 3,
+   "explain": "Se désabonner n'efface pas l'email ; il faut une demande d'effacement pour ça.",
+   "source": "rgpd-02-29"
+  },
+  {
+   "id": "rgpd29",
+   "theme": "rgpd",
+   "q": "Quel effet a le droit de limitation ?",
+   "choices": [
+    "Il gèle l'usage des données pendant l'examen",
+    "Il réduit la durée de conservation",
+    "Il limite le nombre de destinataires",
+    "Il plafonne l'amende"
+   ],
+   "answer": 0,
+   "explain": "L'entreprise ne peut pas exploiter les données durant le mois de délai avant d'effacer.",
+   "source": "rgpd-02-32"
+  },
+  {
+   "id": "rgpd30",
+   "theme": "rgpd",
+   "q": "À quels traitements s'applique le droit de portabilité ?",
+   "choices": [
+    "Tous les traitements sans exception",
+    "Ceux fondés sur le consentement ou le contrat",
+    "Ceux imposés par la loi",
+    "Ceux des administrations"
+   ],
+   "answer": 1,
+   "explain": "Format ouvert et interopérable, ou transfert direct d'une entreprise A vers une entreprise B.",
+   "source": "rgpd-02-33"
+  },
+  {
+   "id": "rgpd31",
+   "theme": "rgpd",
+   "q": "Dans combien d'États les données circulent-elles librement sous le RGPD ?",
+   "choices": [
+    "27",
+    "28",
+    "30",
+    "32"
+   ],
+   "answer": 2,
+   "explain": "Les 27 États membres plus Islande, Liechtenstein et Norvège.",
+   "source": "rgpd-02-37"
+  },
+  {
+   "id": "rgpd32",
+   "theme": "rgpd",
+   "q": "Quel critère rend le RGPD applicable à une entreprise non européenne ?",
+   "choices": [
+    "La nationalité de ses dirigeants",
+    "Le lieu de ses serveurs",
+    "Son chiffre d'affaires en euros",
+    "Le ciblage de personnes dans l'UE"
+   ],
+   "answer": 3,
+   "explain": "Établissement dans l'UE ou ciblage de personnes dans l'UE : deux critères alternatifs.",
+   "source": "rgpd-02-38"
+  },
+  {
+   "id": "rgpd33",
+   "theme": "rgpd",
+   "q": "Depuis quand le RGPD est-il en application ?",
+   "choices": [
+    "25 mai 2018",
+    "1er janvier 2016",
+    "14 juillet 2020",
+    "1er septembre 2027"
+   ],
+   "answer": 0,
+   "explain": "Entré en application le 25 mai 2018, et beaucoup d'entreprises ne sont toujours pas conformes.",
+   "source": "rgpd-03-01"
+  },
+  {
+   "id": "rgpd34",
+   "theme": "rgpd",
+   "q": "Quelle est la première étape de la méthodologie CNIL de mise en conformité ?",
+   "choices": [
+    "Sécuriser les postes",
+    "Recenser et cartographier les traitements",
+    "Nommer un DPO",
+    "Rédiger la politique de confidentialité"
+   ],
+   "answer": 1,
+   "explain": "Quatre étapes : recenser, trier les données, respecter les droits, sécuriser.",
+   "source": "rgpd-03-02"
+  },
+  {
+   "id": "rgpd35",
+   "theme": "rgpd",
+   "q": "À partir de quel âge un mineur peut-il consentir seul au traitement de ses données ?",
+   "choices": [
+    "13 ans",
+    "14 ans",
+    "15 ans",
+    "18 ans"
+   ],
+   "answer": 2,
+   "explain": "En dessous de 15 ans, un mineur ne peut pas consentir seul.",
+   "source": "rgpd-03-08"
+  },
+  {
+   "id": "rgpd36",
+   "theme": "rgpd",
+   "q": "Un fichier Excel avec des données de clients, sans CRM, est-il soumis au RGPD ?",
+   "choices": [
+    "Non, seuls les CRM sont concernés",
+    "Non, sauf au-delà de 1 000 lignes",
+    "Oui, mais seulement s'il est partagé",
+    "Oui, c'est un traitement de données"
+   ],
+   "answer": 3,
+   "explain": "L'absence de CRM ou de prestataire ne change rien.",
+   "source": "rgpd-03-09"
+  },
+  {
+   "id": "rgpd37",
+   "theme": "rgpd",
+   "q": "Que signifie privacy by design ?",
+   "choices": [
+    "Protection prévue dès le cahier des charges",
+    "Un design sobre des formulaires",
+    "Un label de conformité CNIL",
+    "Un audit après la mise en production"
+   ],
+   "answer": 0,
+   "explain": "La protection des données se prévoit dès le départ de tout nouveau projet ou outil.",
+   "source": "rgpd-03-20"
+  },
+  {
+   "id": "rgpd38",
+   "theme": "rgpd",
+   "q": "Où placer les mentions d'information RGPD d'un site ?",
+   "choices": [
+    "Dans les mentions légales",
+    "Sur une page dédiée accessible du footer",
+    "Dans les CGV uniquement",
+    "Dans un mail de bienvenue"
+   ],
+   "answer": 1,
+   "explain": "Page au nom libre, séparée des mentions légales qui sont la carte d'identité de l'éditeur.",
+   "source": "rgpd-03-22"
+  },
+  {
+   "id": "rgpd39",
+   "theme": "rgpd",
+   "q": "Quelle durée de conservation la CNIL recommande-t-elle pour la mesure d'audience ?",
+   "choices": [
+    "6 mois",
+    "12 mois",
+    "13 mois",
+    "24 mois"
+   ],
+   "answer": 2,
+   "explain": "Google Analytics garde 24 mois par défaut ; le réglage à 13 mois existe dans les paramètres.",
+   "source": "rgpd-03-24"
+  },
+  {
+   "id": "rgpd40",
+   "theme": "rgpd",
+   "q": "Quand la désignation d'un DPO est-elle obligatoire ?",
+   "choices": [
+    "Pour toute entreprise de plus de 5 salariés",
+    "Pour tout site avec un formulaire",
+    "Pour toute société commerciale",
+    "En cas de traitement massif de données"
+   ],
+   "answer": 3,
+   "explain": "Un groupe de 35 à 40 écoles en a un, une école seule non.",
+   "source": "rgpd-03-25"
+  },
+  {
+   "id": "rgpd41",
+   "theme": "rgpd",
+   "q": "Lequel de ces cookies relève du marketing et exige un consentement ?",
+   "choices": [
+    "Un embed de vidéo ou de réseau social",
+    "Le cookie de session",
+    "Le cookie de panier",
+    "Le cookie de langue"
+   ],
+   "answer": 0,
+   "explain": "Session, sécurité, panier, langue sont techniques ; pub, embeds, géolocalisation sont marketing.",
+   "source": "rgpd-03-28"
+  },
+  {
+   "id": "rgpd42",
+   "theme": "rgpd",
+   "q": "Comment tester la conformité d'un bandeau cookies ?",
+   "choices": [
+    "Lire les CGU du site",
+    "Lister les cookies avant et après J'accepte",
+    "Demander un audit à l'hébergeur",
+    "Vérifier le certificat HTTPS"
+   ],
+   "answer": 1,
+   "explain": "Cache vidé : 10 cookies puis 35 est bon signe, les mêmes 10 avant et après est mauvais signe.",
+   "source": "rgpd-03-29"
+  },
+  {
+   "id": "rgpd43",
+   "theme": "rgpd",
+   "q": "Quel effet a le blocage de Google Analytics avant consentement sur la fréquentation mesurée ?",
+   "choices": [
+    "Aucun effet",
+    "Baisse de 10 à 20 pour cent",
+    "Baisse de 50 à 75 pour cent",
+    "Hausse, les robots sont filtrés"
+   ],
+   "answer": 2,
+   "explain": "Seuls les visiteurs qui acceptent sont comptés.",
+   "source": "rgpd-03-32"
+  },
+  {
+   "id": "rgpd44",
+   "theme": "rgpd",
+   "q": "Depuis quand le pixel de suivi des emails exige-t-il un consentement préalable des nouveaux prospects ?",
+   "choices": [
+    "25 mai 2018",
+    "14 avril 2026",
+    "11 août 2026",
+    "14 juillet 2026"
+   ],
+   "answer": 3,
+   "explain": "Recommandation CNIL du 14 avril avec 3 mois de délai ; droit d'opposition pour les bases existantes.",
+   "source": "rgpd-03-34"
+  },
+  {
+   "id": "rgpd45",
+   "theme": "rgpd",
+   "q": "Comment repérer un pixel de suivi dans un email ?",
+   "choices": [
+    "Une image de 1 sur 1 dans le code source",
+    "Une confirmation de lecture visible",
+    "Un lien se désabonner",
+    "Une pièce jointe vide"
+   ],
+   "answer": 0,
+   "explain": "La confirmation de lecture Outlook ou Gmail est visible et volontaire, ce n'est pas un pixel.",
+   "source": "rgpd-03-36"
+  },
+  {
+   "id": "rgpd46",
+   "theme": "rgpd",
+   "q": "Depuis le 11 août 2026, quel canal de prospection exige aussi un opt-in préalable ?",
+   "choices": [
+    "Le courrier postal",
+    "Les appels vocaux",
+    "Les réseaux sociaux",
+    "Les salons professionnels"
+   ],
+   "answer": 1,
+   "explain": "Email, SMS et désormais appels vocaux ; Bloctel n'existe plus.",
+   "source": "rgpd-03-37"
+  },
+  {
+   "id": "rgpd47",
+   "theme": "rgpd",
+   "q": "Quelle situation permet de prospecter sans opt-in préalable ?",
+   "choices": [
+    "Un particulier inscrit à un jeu concours",
+    "Un prospect issu d'une base achetée",
+    "Un professionnel sollicité pour son métier",
+    "Un ancien client pour un produit différent"
+   ],
+   "answer": 2,
+   "explain": "Quatre exceptions : B2B lié à la profession, produits analogues, institutionnel, caritatif.",
+   "source": "rgpd-03-38"
+  },
+  {
+   "id": "rgpd48",
+   "theme": "rgpd",
+   "q": "Que faire après l'achat d'une base de prospects ?",
+   "choices": [
+    "Prospecter directement, le vendeur a consenti",
+    "Supprimer la base sous 72 heures",
+    "Déclarer l'achat à la CNIL",
+    "Informer de la source, recueillir l'accord"
+   ],
+   "answer": 3,
+   "explain": "Vérifier le droit du vendeur, informer de la source ; sur 10 000 prospects, peut-être 1 000 acceptent.",
+   "source": "rgpd-03-40"
+  },
+  {
+   "id": "sql01",
+   "theme": "sql",
+   "q": "Pourquoi les clés primaires se font-elles en UUID plutôt qu'en séquence ?",
+   "choices": [
+    "Une séquence laisse deviner l'id suivant",
+    "L'UUID prend moins de place",
+    "Les séquences ne sont pas en SQL",
+    "L'UUID se trie plus vite"
+   ],
+   "answer": 0,
+   "explain": "Avec une séquence, on devine l'identifiant suivant ; l'UUID empêche ça.",
+   "source": "sql-02-01"
+  },
+  {
+   "id": "sql02",
+   "theme": "sql",
+   "q": "Quel avantage apporte UUIDv7 par rapport à un UUID classique ?",
+   "choices": [
+    "Il est plus court",
+    "Il se trie par date de création",
+    "Il est chiffré",
+    "Il évite toute collision"
+   ],
+   "answer": 1,
+   "explain": "UUIDv7 commence par le timestamp de création, suivi d'une partie aléatoire.",
+   "source": "sql-02-02"
+  },
+  {
+   "id": "sql03",
+   "theme": "sql",
+   "q": "Quel est le meilleur type pour stocker un montant d'argent ?",
+   "choices": [
+    "float",
+    "text",
+    "Des centimes dans un integer",
+    "double"
+   ],
+   "answer": 2,
+   "explain": "Le type numérique est acceptable, mais le mieux reste des centimes en integer.",
+   "source": "sql-02-03"
+  },
+  {
+   "id": "sql04",
+   "theme": "sql",
+   "q": "Pourquoi ne jamais stocker un montant en float ?",
+   "choices": [
+    "Le float est trop lent",
+    "Le float est limité à 2 décimales",
+    "Le float ne gère pas les négatifs",
+    "1,5 + 1,5 peut donner 3,00002"
+   ],
+   "answer": 3,
+   "explain": "Les erreurs d'arrondi du float deviennent visibles une fois multipliées par un million.",
+   "source": "sql-02-04"
+  },
+  {
+   "id": "sql05",
+   "theme": "sql",
+   "q": "Quel type utiliser pour stocker une date en base ?",
+   "choices": [
+    "timestamptz",
+    "timestamp",
+    "date",
+    "text au format ISO"
+   ],
+   "answer": 0,
+   "explain": "Le tz garde le décalage horaire : sans lui, Paris et New York confondent deux instants.",
+   "source": "sql-02-05"
+  },
+  {
+   "id": "sql06",
+   "theme": "sql",
+   "q": "Comment garantir vraiment une relation 1-1 entre un compte et son profil ?",
+   "choices": [
+    "Deux clés étrangères croisées",
+    "Une contrainte unique sur la clé étrangère",
+    "Une clé primaire composite",
+    "Un trigger de vérification"
+   ],
+   "answer": 1,
+   "explain": "La clé étrangère va d'un côté ou de l'autre, le unique garantit le 1.",
+   "source": "sql-02-06"
+  },
+  {
+   "id": "sql07",
+   "theme": "sql",
+   "q": "Pourquoi séparer le compte utilisateur du profil public ?",
+   "choices": [
+    "Pour accélérer les requêtes",
+    "Pour limiter la taille des tables",
+    "Isoler données perso et techniques (RGPD)",
+    "Pour autoriser plusieurs profils"
+   ],
+   "answer": 2,
+   "explain": "Logique RGPD : données personnelles d'un côté, données techniques de l'autre.",
+   "source": "sql-02-07"
+  },
+  {
+   "id": "sql08",
+   "theme": "sql",
+   "q": "Dans une relation 1-n, où se stocke la clé étrangère ?",
+   "choices": [
+    "Dans la table parent",
+    "Dans une table intermédiaire",
+    "Dans les deux tables",
+    "Dans la table enfant"
+   ],
+   "answer": 3,
+   "explain": "Le parent (le 1) est référencé dans l'enfant (les n), ex client_id dans missions.",
+   "source": "sql-02-08"
+  },
+  {
+   "id": "sql09",
+   "theme": "sql",
+   "q": "Comment modéliser une relation n-n ?",
+   "choices": [
+    "Table intermédiaire avec les deux IDs",
+    "Clé étrangère dans chaque table",
+    "Colonne tableau d'IDs",
+    "Deux relations 1-1"
+   ],
+   "answer": 0,
+   "explain": "La table de jointure porte souvent une clé primaire composite pour interdire les doublons.",
+   "source": "sql-02-09"
+  },
+  {
+   "id": "sql10",
+   "theme": "sql",
+   "q": "Quelle clé primaire pour une table de commentaires reliant article et user ?",
+   "choices": [
+    "Clé composite article_id + user_id",
+    "UUID classique",
+    "Séquence auto-incrémentée",
+    "L'id de l'article"
+   ],
+   "answer": 1,
+   "explain": "Un user peut commenter plusieurs fois le même article, donc les doublons sont permis.",
+   "source": "sql-02-10"
+  },
+  {
+   "id": "sql11",
+   "theme": "sql",
+   "q": "Pourquoi préférer une relation 1-n vers une table de référence à un multi-select Airtable ?",
+   "choices": [
+    "C'est plus rapide à saisir",
+    "Airtable limite à 10 valeurs",
+    "Elle empêche doublons et fautes de frappe",
+    "Le multi-select ne s'exporte pas"
+   ],
+   "answer": 2,
+   "explain": "Le multi-select laisse l'utilisateur saisir librement, d'où doublons et fautes.",
+   "source": "sql-02-11"
+  },
+  {
+   "id": "sql12",
+   "theme": "sql",
+   "q": "Où doivent se verrouiller les contraintes d'intégrité ?",
+   "choices": [
+    "Dans le formulaire",
+    "Dans l'API",
+    "Dans l'application",
+    "Dans la base de données"
+   ],
+   "answer": 3,
+   "explain": "Si l'app oublie un contrôle, la base rejette quand même l'entrée.",
+   "source": "sql-02-14"
+  },
+  {
+   "id": "sql13",
+   "theme": "sql",
+   "q": "Que garantit la contrainte unique ?",
+   "choices": [
+    "Une valeur n'apparaît qu'une fois",
+    "Le champ est obligatoire",
+    "Le champ a une valeur par défaut",
+    "La valeur est supérieure à 0"
+   ],
+   "answer": 0,
+   "explain": "Exemple : le client_id de la table profil ne peut exister qu'une fois.",
+   "source": "sql-02-15"
+  },
+  {
+   "id": "sql14",
+   "theme": "sql",
+   "q": "Quel effet a la contrainte not null ?",
+   "choices": [
+    "Interdit les doublons",
+    "Rend le champ obligatoire",
+    "Fixe une valeur par défaut",
+    "Vérifie une condition"
+   ],
+   "answer": 1,
+   "explain": "Exemple : l'email de connexion d'une table user ne peut pas être vide.",
+   "source": "sql-02-16"
+  },
+  {
+   "id": "sql15",
+   "theme": "sql",
+   "q": "À quoi sert default sur une colonne ?",
+   "choices": [
+    "Rendre le champ obligatoire",
+    "Interdire les doublons",
+    "Fixer une valeur si rien n'est fourni",
+    "Chiffrer la valeur"
+   ],
+   "answer": 2,
+   "explain": "Exemple : statut d'article à draft pour toute entrée créée sans statut.",
+   "source": "sql-02-17"
+  },
+  {
+   "id": "sql16",
+   "theme": "sql",
+   "q": "Dans quelle proportion de cas un not null s'accompagne-t-il d'un default ?",
+   "choices": [
+    "Jamais",
+    "Environ 10 pour cent",
+    "Environ la moitié",
+    "Environ 90 pour cent"
+   ],
+   "answer": 3,
+   "explain": "Même une nomenclature auto-générée se met en default via une fonction qui la calcule.",
+   "source": "sql-02-18"
+  },
+  {
+   "id": "sql17",
+   "theme": "sql",
+   "q": "Que peut lire une contrainte check ?",
+   "choices": [
+    "Toute la ligne courante seulement",
+    "Toute la table",
+    "Les autres tables",
+    "Rien d'autre que la colonne"
+   ],
+   "answer": 0,
+   "explain": "Le check impose un budget supérieur à 0 mais ne peut pas remplacer un unique.",
+   "source": "sql-02-19"
+  },
+  {
+   "id": "sql18",
+   "theme": "sql",
+   "q": "Pourquoi l'enum est-il déconseillé ?",
+   "choices": [
+    "Il est plus lent qu'un text",
+    "Le modifier demande plein de requêtes",
+    "Il n'existe pas dans Postgres",
+    "Il ne gère pas les accents"
+   ],
+   "answer": 1,
+   "explain": "Réordonner ou changer un enum est lourd, un check se modifie en une seule fois.",
+   "source": "sql-02-20"
+  },
+  {
+   "id": "sql19",
+   "theme": "sql",
+   "q": "Pour un champ à valeurs connues, quel typage évite tout recalcul à la base ?",
+   "choices": [
+    "text sans limite",
+    "enum",
+    "char de la taille max avec check",
+    "integer codé"
+   ],
+   "answer": 2,
+   "explain": "L'espace est alloué d'avance à la taille de la plus grande valeur, la base ne recalcule rien.",
+   "source": "sql-02-22"
+  },
+  {
+   "id": "sql20",
+   "theme": "sql",
+   "q": "Pourquoi onDelete cascade est-il dangereux sur un user ?",
+   "choices": [
+    "Il ralentit la suppression",
+    "Il bloque la suppression",
+    "Il crée des doublons",
+    "Il efface les données financières liées"
+   ],
+   "answer": 3,
+   "explain": "Profil puis factures disparaissent, inacceptable pour des données à garder légalement.",
+   "source": "sql-02-23"
+  },
+  {
+   "id": "sql21",
+   "theme": "sql",
+   "q": "Quel onDelete mettre sur les tables financières ?",
+   "choices": [
+    "set null",
+    "cascade",
+    "restrict",
+    "no action"
+   ],
+   "answer": 0,
+   "explain": "Le profil_id est vidé mais factures et devis restent en base.",
+   "source": "sql-02-24"
+  },
+  {
+   "id": "sql22",
+   "theme": "sql",
+   "q": "Pourquoi une facture copie-t-elle toutes les données à sa création ?",
+   "choices": [
+    "Pour accélérer l'affichage",
+    "Garder l'état exact au moment de l'émission",
+    "Pour éviter les jointures",
+    "Pour alléger la table société"
+   ],
+   "answer": 1,
+   "explain": "Si une société change de nom en gardant son SIRET, les anciennes factures gardent l'ancien nom.",
+   "source": "sql-02-25"
+  },
+  {
+   "id": "sql23",
+   "theme": "sql",
+   "q": "Quel est le comportement par défaut du onDelete ?",
+   "choices": [
+    "cascade",
+    "set null",
+    "restrict",
+    "set default"
+   ],
+   "answer": 2,
+   "explain": "La suppression est bloquée tant qu'il existe des dépendances dans d'autres tables.",
+   "source": "sql-02-27"
+  },
+  {
+   "id": "sql24",
+   "theme": "sql",
+   "q": "Quelle colonne se met dans toutes les tables ?",
+   "choices": [
+    "updated_by",
+    "version",
+    "deleted_at",
+    "created_at timestamptz default now()"
+   ],
+   "answer": 3,
+   "explain": "created_at not null default now(), parfois accompagné d'un updated_at.",
+   "source": "sql-02-31"
+  },
+  {
+   "id": "sql25",
+   "theme": "sql",
+   "q": "Que changer pour pouvoir supprimer un client en gardant ses missions via set null ?",
+   "choices": [
+    "Retirer le not null de client_id",
+    "Ajouter un unique sur client_id",
+    "Passer client_id en integer",
+    "Ajouter un default à client_id"
+   ],
+   "answer": 0,
+   "explain": "Set null doit pouvoir vider client_id, donc la colonne doit accepter null.",
+   "source": "sql-02-33"
+  },
+  {
+   "id": "sql26",
+   "theme": "sql",
+   "q": "Dans quelle table se déclare le onDelete ?",
+   "choices": [
+    "La table parent",
+    "La table enfant",
+    "Une table de configuration",
+    "Les deux tables"
+   ],
+   "answer": 1,
+   "explain": "Le onDelete accompagne la clé étrangère, qui vit dans la table enfant.",
+   "source": "sql-02-34"
+  },
+  {
+   "id": "sql27",
+   "theme": "sql",
+   "q": "Qu'est-ce qu'un seed en base de données ?",
+   "choices": [
+    "Un index de recherche",
+    "Une sauvegarde",
+    "Un jeu de valeurs injecté en base",
+    "Une clé de chiffrement"
+   ],
+   "answer": 2,
+   "explain": "Par exemple des données de test insérées après la création des tables.",
+   "source": "sql-02-35"
+  },
+  {
+   "id": "sql28",
+   "theme": "sql",
+   "q": "Que signifie DDL ?",
+   "choices": [
+    "Data Delete Language",
+    "Database Design Layer",
+    "Data Driven Logic",
+    "Data Definition Language"
+   ],
+   "answer": 3,
+   "explain": "Le DDL regroupe les create table qui définissent la structure de la base.",
+   "source": "sql-02-38"
+  },
+  {
+   "id": "vulgarisation01",
+   "theme": "vulgarisation",
+   "q": "Quelle habitude Chrome a-t-il introduite dans la barre d'adresse du navigateur ?",
+   "choices": [
+    "Lancer une recherche depuis la barre d'URL",
+    "Bloquer les publicités",
+    "Traduire les pages automatiquement",
+    "Afficher les onglets verticalement"
+   ],
+   "answer": 0,
+   "explain": "Avant Chrome, taper une requête dans la barre d'adresse ne lançait aucune recherche.",
+   "source": "vulgarisation-01-01"
+  },
+  {
+   "id": "vulgarisation02",
+   "theme": "vulgarisation",
+   "q": "Qu'est-ce qu'un backlink ?",
+   "choices": [
+    "Un lien interne entre deux pages du site",
+    "Un lien d'un site tiers vers ton site",
+    "Un lien cassé à réparer",
+    "Un lien sponsorisé dans Google Ads"
+   ],
+   "answer": 1,
+   "explain": "Posé sur un site de référence, il renvoie vers ton site et lui transfère de l'autorité, le jus.",
+   "source": "vulgarisation-01-03"
+  },
+  {
+   "id": "vulgarisation03",
+   "theme": "vulgarisation",
+   "q": "Quel est l'objectif premier d'un backlink ?",
+   "choices": [
+    "Générer des clics vers le site",
+    "Augmenter le temps de visite",
+    "Gagner en puissance de ranking",
+    "Réduire le taux de rebond"
+   ],
+   "answer": 2,
+   "explain": "On vise l'autorité transférée, pas le trafic : les visiteurs n'ont même pas besoin de cliquer.",
+   "source": "vulgarisation-01-04"
+  },
+  {
+   "id": "vulgarisation04",
+   "theme": "vulgarisation",
+   "q": "Sur l'ancien PageRank de Google noté sur 10, quel score avait Facebook ?",
+   "choices": [
+    "5",
+    "7",
+    "10",
+    "9"
+   ],
+   "answer": 3,
+   "explain": "Facebook était à 9 ; le 10 restait réservé à des sites comme la Maison Blanche ou l'ONU.",
+   "source": "vulgarisation-01-05"
+  },
+  {
+   "id": "vulgarisation05",
+   "theme": "vulgarisation",
+   "q": "Un site PageRank 10 fait un lien vers un site PageRank 5. Que se passe-t-il ?",
+   "choices": [
+    "Le site PageRank 5 monte",
+    "Le site PageRank 10 descend",
+    "Rien, les scores sont figés",
+    "Les deux sites sont pénalisés"
+   ],
+   "answer": 0,
+   "explain": "Le lien d'un site plus puissant transfère de l'autorité au site moins puissant.",
+   "source": "vulgarisation-01-06"
+  },
+  {
+   "id": "vulgarisation06",
+   "theme": "vulgarisation",
+   "q": "Pourquoi racheter un domaine expiré intéresse-t-il un SEO ?",
+   "choices": [
+    "Le nom est plus court et mémorable",
+    "Il conserve son historique et son autorité",
+    "Il est gratuit la première année",
+    "Google l'indexe en priorité"
+   ],
+   "answer": 1,
+   "explain": "Un domaine expiré garde son autorité : on la récupère sur son propre serveur.",
+   "source": "vulgarisation-01-07"
+  },
+  {
+   "id": "vulgarisation07",
+   "theme": "vulgarisation",
+   "q": "Quel moteur de recherche était le plus connu en France avant l'arrivée de Google ?",
+   "choices": [
+    "Bing",
+    "Qwant",
+    "Lycos",
+    "DuckDuckGo"
+   ],
+   "answer": 2,
+   "explain": "Lycos dominait au tout début d'Internet, à l'époque de Yahoo et AOL.",
+   "source": "vulgarisation-01-09"
+  },
+  {
+   "id": "vulgarisation08",
+   "theme": "vulgarisation",
+   "q": "En SEO, en quoi consiste le montage d'un PBN ?",
+   "choices": [
+    "Payer des influenceurs pour des liens",
+    "Optimiser les balises d'une seule page",
+    "Créer un blog très actif",
+    "Acheter 50 domaines et y monter des sites"
+   ],
+   "answer": 3,
+   "explain": "Un PBN, c'est une cinquantaine de domaines avec des sites pour ranker sur une problématique.",
+   "source": "vulgarisation-02-03"
+  },
+  {
+   "id": "vulgarisation09",
+   "theme": "vulgarisation",
+   "q": "Où chercher pour vérifier une news ?",
+   "choices": [
+    "Partout : Reddit, Google, les IA, surtout X",
+    "Uniquement sur le site de l'éditeur",
+    "Dans la presse papier",
+    "Sur Wikipédia seulement"
+   ],
+   "answer": 0,
+   "explain": "On croise plusieurs canaux, et X en priorité.",
+   "source": "vulgarisation-02-27"
+  },
+  {
+   "id": "vulgarisation10",
+   "theme": "vulgarisation",
+   "q": "Quelles sont les trois obligations non négociables d'un outil de veille ?",
+   "choices": [
+    "Rapidité, design, gratuité",
+    "Sources, date de collecte, confiance",
+    "Résumé, traduction, publication",
+    "Alertes, archivage, export"
+   ],
+   "answer": 1,
+   "explain": "Sources identifiables, date de collecte et niveau de confiance : l'outil est noté dessus.",
+   "source": "vulgarisation-01-12"
+  },
+  {
+   "id": "vulgarisation11",
+   "theme": "vulgarisation",
+   "q": "Quand une date de collecte ancienne est-elle acceptable en veille ?",
+   "choices": [
+    "Jamais, il faut du récent",
+    "Quand la source est très fiable",
+    "Quand on cherche volontairement du vieux",
+    "Quand la news n'est pas datée"
+   ],
+   "answer": 2,
+   "explain": "Le plus récent possible, sauf si on cherche des stats d'il y a 20 ans ; la datation reste clé.",
+   "source": "vulgarisation-01-13"
+  },
+  {
+   "id": "vulgarisation12",
+   "theme": "vulgarisation",
+   "q": "Quelle place l'instinct a-t-il dans la veille ?",
+   "choices": [
+    "Il est interdit, seuls les faits comptent",
+    "Il remplace l'expérience",
+    "Il sert uniquement au départ",
+    "Il vient après l'expérience"
+   ],
+   "answer": 3,
+   "explain": "L'instinct est nécessaire mais se construit : plus on est bon en veille, meilleur il est.",
+   "source": "vulgarisation-01-14"
+  },
+  {
+   "id": "vulgarisation13",
+   "theme": "vulgarisation",
+   "q": "En veille professionnelle, quelle posture adopter face aux opinions ?",
+   "choices": [
+    "Ne pas prendre parti",
+    "Défendre son avis personnel",
+    "Suivre l'avis majoritaire",
+    "Trancher pour le client"
+   ],
+   "answer": 0,
+   "explain": "On est au service du client et de la valeur ; le parti pris est réservé à la veille perso.",
+   "source": "vulgarisation-01-15"
+  },
+  {
+   "id": "vulgarisation14",
+   "theme": "vulgarisation",
+   "q": "Entre deux personnes sincères, qui a le plus de moyens de manipuler une question ?",
+   "choices": [
+    "Celle qui parle le plus fort",
+    "Celle qui en sait le plus",
+    "Celle qui cite le plus de sources",
+    "Celle qui répond en premier"
+   ],
+   "answer": 1,
+   "explain": "Plus on sait, plus on peut orienter la question dans le sens voulu sans mentir.",
+   "source": "vulgarisation-01-16"
+  },
+  {
+   "id": "vulgarisation15",
+   "theme": "vulgarisation",
+   "q": "Quel type d'outil de veille est refusé pour le projet du cours ?",
+   "choices": [
+    "Un bot Telegram maison",
+    "Un workflow n8n personnalisé",
+    "Google Actu ou LM Studio tels quels",
+    "Un script Python sur mesure"
+   ],
+   "answer": 2,
+   "explain": "Il faut construire un outil personnalisé avec les briques les plus logiques.",
+   "source": "vulgarisation-01-18"
+  },
+  {
+   "id": "vulgarisation16",
+   "theme": "vulgarisation",
+   "q": "Lequel de ces critères fait partie de la notation de l'outil de veille ?",
+   "choices": [
+    "Le nombre de sources suivies",
+    "La beauté de l'interface",
+    "Le coût mensuel de l'outil",
+    "La résistance à une source cassée"
+   ],
+   "answer": 3,
+   "explain": "Déclenchement auto, résistance à une source cassée, filtre, transformation, republication.",
+   "source": "vulgarisation-01-19"
+  },
+  {
+   "id": "vulgarisation17",
+   "theme": "vulgarisation",
+   "q": "Dans le cours, qu'est-ce qu'une source de veille ?",
+   "choices": [
+    "Un compte, un site web ou une personne",
+    "Uniquement un flux RSS",
+    "Un article déjà publié",
+    "Une base de données payante"
+   ],
+   "answer": 0,
+   "explain": "L'architecture doit dire comment ces sources sont traitées, par un hub ou en local.",
+   "source": "vulgarisation-01-21"
+  },
+  {
+   "id": "vulgarisation18",
+   "theme": "vulgarisation",
+   "q": "Quel conseil est donné pour concevoir l'architecture de son outil avec l'IA ?",
+   "choices": [
+    "Rédiger un cahier des charges",
+    "Travailler avec l'IA en vocal",
+    "Copier une architecture existante",
+    "Dessiner un schéma sur papier"
+   ],
+   "answer": 1,
+   "explain": "En vocal, l'IA capte plus de contexte qu'à l'écrit.",
+   "source": "vulgarisation-01-22"
+  },
+  {
+   "id": "vulgarisation19",
+   "theme": "vulgarisation",
+   "q": "Où Yoann centralise-t-il son flux de veille ?",
+   "choices": [
+    "Dans des dossiers Instagram",
+    "Dans un tableau Notion",
+    "Dans un bot Telegram",
+    "Dans une newsletter Substack"
+   ],
+   "answer": 2,
+   "explain": "Le bot egghead news remplace les dossiers éparpillés sur Instagram, Twitter et Facebook.",
+   "source": "vulgarisation-01-23"
+  },
+  {
+   "id": "vulgarisation20",
+   "theme": "vulgarisation",
+   "q": "Pourquoi le bot de veille propose-t-il une étape de confirmation sur Reddit ?",
+   "choices": [
+    "Reddit est la source la plus rapide",
+    "Reddit traduit automatiquement",
+    "Reddit est modéré par des experts",
+    "Des veilleurs pointus y partagent des tips"
+   ],
+   "answer": 3,
+   "explain": "X et Reddit sont des mines d'or pour les tips and tricks de veilleurs de haut niveau.",
+   "source": "vulgarisation-01-25"
+  },
+  {
+   "id": "vulgarisation21",
+   "theme": "vulgarisation",
+   "q": "Sur quoi se base le second cerveau de Yoann pour répondre ?",
+   "choices": [
+    "Uniquement ce qu'on lui a envoyé",
+    "Une recherche Internet en direct",
+    "Les tendances Google",
+    "Un flux d'actualités public"
+   ],
+   "answer": 0,
+   "explain": "L'app ne cherche jamais sur Internet : le résultat dépend de ce qu'on lui a donné à manger.",
+   "source": "vulgarisation-01-30"
+  },
+  {
+   "id": "vulgarisation22",
+   "theme": "vulgarisation",
+   "q": "Quelle chaîne résume la formule le fond, la forme, le rentable ?",
+   "choices": [
+    "Lire, noter, oublier",
+    "Entrée de data, transformation, republication",
+    "Collecte, stockage, suppression",
+    "Idée, prototype, vente"
+   ],
+   "answer": 1,
+   "explain": "La republication crée trafic, visibilité ou notoriété ; il suffit qu'une seule personne lise.",
+   "source": "vulgarisation-01-32"
+  },
+  {
+   "id": "vulgarisation23",
+   "theme": "vulgarisation",
+   "q": "Pourquoi un outil de veille construit soi-même bat-il Notion ou LM Studio ?",
+   "choices": [
+    "Il est plus rapide",
+    "Il coûte moins cher",
+    "Rien n'est aussi personnalisé",
+    "Il a plus de sources"
+   ],
+   "answer": 2,
+   "explain": "La veille, c'est de la personnalisation maximale.",
+   "source": "vulgarisation-01-35"
+  },
+  {
+   "id": "vulgarisation24",
+   "theme": "vulgarisation",
+   "q": "Quel sujet choisir comme pierre angulaire de son outil de veille ?",
+   "choices": [
+    "Le plus porteur sur LinkedIn",
+    "Le plus technique possible",
+    "Celui imposé par le formateur",
+    "Un sujet avec lequel on est à l'aise"
+   ],
+   "answer": 3,
+   "explain": "Les sources viennent plus vite, le traitement est plus plaisant, cercle vertueux.",
+   "source": "vulgarisation-01-36"
+  },
+  {
+   "id": "vulgarisation25",
+   "theme": "vulgarisation",
+   "q": "Quel est le piège du FOMO en veille ?",
+   "choices": [
+    "Donner le même poids à toutes les news",
+    "Rater les annonces majeures",
+    "Publier trop tard",
+    "Suivre trop peu de sources"
+   ],
+   "answer": 0,
+   "explain": "À force de ne rien vouloir rater, on pondère tout pareil, ce qui est faux.",
+   "source": "vulgarisation-02-01"
+  },
+  {
+   "id": "vulgarisation26",
+   "theme": "vulgarisation",
+   "q": "Quel est le but du cours de veille ?",
+   "choices": [
+    "Lire un maximum de news par jour",
+    "Pondérer une news d'un coup d'oeil",
+    "Automatiser toute la lecture",
+    "Devenir journaliste tech"
+   ],
+   "answer": 1,
+   "explain": "Affiner son regard pour savoir ce qu'on met de côté et ce sur quoi on se met.",
+   "source": "vulgarisation-02-02"
+  },
+  {
+   "id": "vulgarisation27",
+   "theme": "vulgarisation",
+   "q": "Comment l'annonce de Gem est-elle arrivée jusqu'au formateur ?",
+   "choices": [
+    "Par le communiqué de l'éditeur",
+    "Par une pub sur LinkedIn",
+    "Par un testeur indépendant en vidéo",
+    "Par Google Actu"
+   ],
+   "answer": 2,
+   "explain": "Un veilleur suivi a publié une vidéo de 30 minutes avec un cas d'usage dès le samedi.",
+   "source": "vulgarisation-02-13"
+  },
+  {
+   "id": "vulgarisation28",
+   "theme": "vulgarisation",
+   "q": "Laquelle de ces questions fait partie des quatre à se poser face à une news ?",
+   "choices": [
+    "Combien de likes a-t-elle ?",
+    "Qui l'a partagée en premier ?",
+    "Est-elle sponsorisée ?",
+    "Quelqu'un d'indépendant l'a-t-il vérifiée ?"
+   ],
+   "answer": 3,
+   "explain": "Est-ce vrai, vérifié par un indépendant, testable aujourd'hui, et qu'est-ce que ça change pour moi.",
+   "source": "vulgarisation-02-15"
+  },
+  {
+   "id": "vulgarisation29",
+   "theme": "vulgarisation",
+   "q": "Que déduire d'un article non signé ?",
+   "choices": [
+    "C'est déjà un signal de méfiance",
+    "Rien, c'est courant",
+    "Il vient d'une agence de presse",
+    "Il est forcément faux"
+   ],
+   "answer": 0,
+   "explain": "L'absence d'auteur pèse dans le calcul de l'indice de fiabilité.",
+   "source": "vulgarisation-02-17"
+  },
+  {
+   "id": "vulgarisation30",
+   "theme": "vulgarisation",
+   "q": "Pourquoi un auteur doit-il être identifiable et traçable ?",
+   "choices": [
+    "Pour lui demander une interview",
+    "Pour comprendre ce qui se cache derrière",
+    "Pour vérifier son orthographe",
+    "Pour le citer correctement"
+   ],
+   "answer": 1,
+   "explain": "Retrouver ses écrits et prises de position ailleurs éclaire la news.",
+   "source": "vulgarisation-02-18"
+  },
+  {
+   "id": "vulgarisation31",
+   "theme": "vulgarisation",
+   "q": "Que représente une publication épinglée sur le compte X officiel d'une marque ?",
+   "choices": [
+    "Un post sponsorisé",
+    "Un message de bienvenue",
+    "Son annonce la plus importante",
+    "Une réponse au support"
+   ],
+   "answer": 2,
+   "explain": "C'est ce que la marque a de plus important à montrer.",
+   "source": "vulgarisation-02-19"
+  },
+  {
+   "id": "vulgarisation32",
+   "theme": "vulgarisation",
+   "q": "Un éditeur annonce son produit x444 moins cher sur son site. Comment le traiter ?",
+   "choices": [
+    "Comme un test validé",
+    "Comme une donnée de référence",
+    "Comme une estimation prudente",
+    "Comme une affirmation à vérifier"
+   ],
+   "answer": 3,
+   "explain": "On confronte toujours ce qui est annoncé avec ce qui est vérifié.",
+   "source": "vulgarisation-02-21"
+  },
+  {
+   "id": "vulgarisation33",
+   "theme": "vulgarisation",
+   "q": "Quelle valeur accorder au site de l'éditeur comme source ?",
+   "choices": [
+    "Zéro par défaut, sauf acteur très fiable",
+    "Maximale, c'est la source primaire",
+    "Moyenne, comme un média",
+    "Variable selon le design du site"
+   ],
+   "answer": 0,
+   "explain": "Sauf acteur très fiable comme Google ; vigilance sur celui qui tire la couverture vers lui.",
+   "source": "vulgarisation-02-22"
+  },
+  {
+   "id": "vulgarisation34",
+   "theme": "vulgarisation",
+   "q": "Que dit l'indice de fiabilité d'une source ?",
+   "choices": [
+    "S'il faut l'utiliser ou non",
+    "Avec quelle vigilance l'utiliser",
+    "Si l'auteur est honnête",
+    "Combien de fois la citer"
+   ],
+   "answer": 1,
+   "explain": "Il n'interdit pas d'utiliser la source : il dit comment.",
+   "source": "vulgarisation-02-23"
+  },
+  {
+   "id": "vulgarisation35",
+   "theme": "vulgarisation",
+   "q": "Un produit qui se lance n'a aucune source qui en parle. Qu'en conclure ?",
+   "choices": [
+    "Le produit est mauvais",
+    "Le produit est fiable",
+    "Rien, il n'a pas d'historique",
+    "L'éditeur cache quelque chose"
+   ],
+   "answer": 2,
+   "explain": "Beaucoup de sources ne garantit pas la fiabilité, et aucune source ne prouve pas la médiocrité.",
+   "source": "vulgarisation-02-24"
+  }
+ ]
+}
